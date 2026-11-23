@@ -7,7 +7,7 @@ Paket ini memuat data, kode, model final, dan hasil yang mendukung artikel. Selu
 ## Struktur direktori
 
 ```text
-rki-publication/
+GraphVenom/
 ├── README.md
 ├── 1-data/                        # Data peptida–protein, fitur, split, dan struktur
 ├── 2-machine_learning_analysis/   # Model benchmark, GraphVenom, ablasi, dan prediksi
@@ -38,6 +38,32 @@ Kode berada di `2-machine_learning_analysis/`. Folder `model1/` hingga `model10/
 
 Sumber komponen: XGBoost oleh [Chen dan Guestrin (2016)](https://arxiv.org/abs/1603.02754), serta ProtT5/ProtTrans oleh [Elnaggar dkk. (2022)](https://doi.org/10.1109/TPAMI.2021.3095381) ([kode ProtTrans](https://github.com/agemagician/ProtTrans)).
 
+### Hyperparameter
+
+Konfigurasi final seluruh model tersedia di `configs/benchmark/`. Tabel berikut merangkum pencarian awal GraphVenom-GAT, GINE, dan GCN: masing-masing 6, 8, dan 8 kombinasi yang dievaluasi pada lima fold. Nilai terpilih juga digunakan pada benchmark final. **Tetap** berarti parameter memakai satu nilai sepanjang pencarian.
+
+| Model | Hyperparameter | Kandidat | Nilai terpilih |
+|---|---|---|---|
+| 6 — GAT | Learning rate | Tetap | 0,0005 |
+| | Graph dropout | 0,15; 0,20 | 0,15 |
+| | MLP dropout | Tetap | 0,15 |
+| | Weight decay | Tetap | 0,0001 |
+| | FiLM scale | 0,05; 0,10; 0,20 | 0,20 |
+| 8 — GINE | Learning rate | Tetap | 0,0005 |
+| | Graph dropout | 0,15; 0,20 | 0,15 |
+| | MLP dropout | 0,15; 0,20 | 0,20 |
+| | Weight decay | 0,0001; 0,0003 | 0,0003 |
+| | FiLM scale | Tetap | 0,20 |
+| 10 — GCN | Learning rate | 0,0003; 0,0005 | 0,0005 |
+| | Graph dropout | Tetap | 0,20 |
+| | MLP dropout | 0,15; 0,20 | 0,20 |
+| | Weight decay | Tetap | 0,0003 |
+| | FiLM scale | 0,10; 0,20 | 0,20 |
+
+Batch size 64, empat graph layer, hidden dimension 64, output dimension 256, serta MLP berukuran 256 dan 128 digunakan tetap. GAT memakai empat attention head. Pemilihan kandidat per fold menggunakan validation PR-AUC, dengan ROC-AUC sebagai pembanding saat PR-AUC sama; konfigurasi final mengikuti kandidat yang paling sering menang antar-fold.
+
+Daftar kandidat, hasil per fold, dan ringkasan pemilihan tersedia di `results/tuning/`. Konfigurasi benchmark model lainnya dapat dilihat pada `configs/benchmark/`.
+
 ### Penggunaan
 
 Siapkan dependensi dari `environments/`. Untuk baseline, ekstrak fitur `.csv.gz` menjadi `.csv` pada folder yang sama. Checkpoint ensemble Model 6, 8, dan 10 tersedia di `checkpoints/`, sedangkan hasil evaluasi dan screening berada di `results/`.
@@ -54,7 +80,7 @@ Seleksi kandidat dilanjutkan melalui `2-predict/ensemble_filtering.ipynb`. Untuk
 
 ## Docking
 
-Folder `3-docking_analysis/` berisi kode dan konfigurasi docking, ringkasan skor di `results/scores/`, pose terbaik di `results/best_poses/`, serta perbandingan kandidat–kontrol di `results/controls/`. Manifest di `results/manifests/` menghubungkan hasil dengan berkas input. Path dalam manifest dihitung dari direktori utama `rki-publication/`.
+Folder `3-docking_analysis/` berisi kode dan konfigurasi docking, ringkasan skor di `results/scores/`, pose terbaik di `results/best_poses/`, serta perbandingan kandidat–kontrol di `results/controls/`. Manifest di `results/manifests/` menghubungkan hasil dengan berkas input. Path dalam manifest dihitung dari direktori utama `GraphVenom/`.
 
 ## Dinamika molekuler
 

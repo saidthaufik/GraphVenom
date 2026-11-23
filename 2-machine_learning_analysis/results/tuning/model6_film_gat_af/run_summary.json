@@ -1,0 +1,112 @@
+{
+  "config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "grad_clip": 1.0,
+    "threshold": 0.5,
+    "num_workers": 0,
+    "device": "cuda",
+    "log_every": 1,
+    "epochs": 200,
+    "batch_size": 64,
+    "hidden_dim": 64,
+    "out_dim": 256,
+    "heads": 4,
+    "gnn_layers": 4,
+    "dropout": 0.15,
+    "mlp_dropout": 0.15,
+    "mlp_hidden": [
+      256,
+      128
+    ],
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "pos_weight": 1.0,
+    "pairwise_lambda": 0.0,
+    "score_hidden": 128,
+    "global_mode": "length",
+    "film_target": "protein",
+    "film_scale": 0.05
+  },
+  "final_candidate_config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "grad_clip": 1.0,
+    "threshold": 0.5,
+    "num_workers": 0,
+    "device": "cuda",
+    "log_every": 1,
+    "epochs": 200,
+    "batch_size": 64,
+    "hidden_dim": 64,
+    "out_dim": 256,
+    "heads": 4,
+    "gnn_layers": 4,
+    "dropout": 0.15,
+    "mlp_dropout": 0.15,
+    "mlp_hidden": [
+      256,
+      128
+    ],
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "pos_weight": 1.0,
+    "pairwise_lambda": 0.0,
+    "score_hidden": 128,
+    "global_mode": "length",
+    "film_target": "protein",
+    "film_scale": 0.2,
+    "candidate_id": 3,
+    "candidate_name": "cand3_length_protein_fs0.2_lr0.0005_wd0.0001_do0.15_mdo0.15_mlp256-128"
+  },
+  "dataset_summary": {
+    "num_samples": 6991,
+    "num_positive": 3470,
+    "num_negative": 3521,
+    "avg_peptide_len": 18.677442425976256,
+    "avg_protein_len": 465.403804892004
+  },
+  "kfold_mean": {
+    "val_accuracy": 0.9263207789986267,
+    "val_precision": 0.9266710551674479,
+    "val_recall": 0.925800116663426,
+    "val_f1": 0.9258789961787512,
+    "val_roc_auc": 0.9727891588208102,
+    "val_pr_auc": 0.9795250770164492
+  },
+  "final_test_metrics": {
+    "loss": 0.3328548676951431,
+    "accuracy": 0.9199428162973553,
+    "precision": 0.9229651162790697,
+    "recall": 0.9149855907780979,
+    "f1": 0.918958031837916,
+    "roc_auc": 0.9619954217507716,
+    "pr_auc": 0.9719566528308913,
+    "threshold": 0.5,
+    "confusion_matrix": [
+      [
+        652,
+        53
+      ],
+      [
+        59,
+        635
+      ]
+    ],
+    "tn": 652,
+    "fp": 53,
+    "fn": 59,
+    "tp": 635,
+    "final_epochs": 119
+  },
+  "final_epochs": 119,
+  "best_epochs_per_fold": [
+    94,
+    196,
+    192,
+    50,
+    63
+  ]
+}
