@@ -63,6 +63,18 @@ Konfigurasi final seluruh model tersedia di `configs/benchmark/`. Tabel berikut 
 Batch size 64, empat graph layer, hidden dimension 64, output dimension 256, serta MLP berukuran 256 dan 128 digunakan tetap. GAT memakai empat attention head. Pemilihan kandidat per fold menggunakan validation PR-AUC, dengan ROC-AUC sebagai pembanding saat PR-AUC sama; konfigurasi final mengikuti kandidat yang paling sering menang antar-fold.
 
 Daftar kandidat, hasil per fold, dan ringkasan pemilihan tersedia di `results/tuning/`. Konfigurasi benchmark model lainnya dapat dilihat pada `configs/benchmark/`.
+Riwayat eksperimen awal Model 5, 7, dan 9 berada di `results/tuning/early_2026-05-13/`. Masing-masing mengevaluasi empat kombinasi pada lima fold:
+
+| Model (eksperimen awal) | Hyperparameter | Kandidat | Nilai terpilih pada eksperimen awal |
+|---|---|---|---|
+| 5 | Learning rate | 0,0003; 0,0005 | 0,0003 |
+| 5 | Weight decay | 0,001; 0,01 | 0,001 |
+| 7 | Learning rate | 0,0003; 0,0005 | 0,0005 |
+| 7 | Weight decay | 0,0001; 0,001 | 0,001 |
+| 9 | Learning rate | 0,0003; 0,0005 | 0,0003 |
+| 9 | Weight decay | 0,001; 0,01 | 0,001 |
+
+Eksperimen awal menggunakan prediktor MLP berukuran 512–256–128. Benchmark final menggunakan 256–128 dan konfigurasi GNN yang telah diperbarui; nilai finalnya tercantum di `configs/benchmark/`.
 
 ### Penggunaan
 

@@ -1,0 +1,108 @@
+{
+  "config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "grad_clip": 1.0,
+    "threshold": 0.5,
+    "num_workers": 0,
+    "device": "cuda",
+    "log_every": 1,
+    "epochs": 200,
+    "batch_size": 32,
+    "hidden_dim": 64,
+    "out_dim": 256,
+    "heads": 4,
+    "gnn_layers": 3,
+    "dropout": 0.1,
+    "mlp_dropout": 0.1,
+    "mlp_hidden": [
+      512,
+      256,
+      128
+    ],
+    "lr": 0.0003,
+    "weight_decay": 0.001,
+    "pos_weight": 1.0,
+    "pairwise_lambda": 0.5,
+    "score_hidden": 128
+  },
+  "final_candidate_config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "grad_clip": 1.0,
+    "threshold": 0.5,
+    "num_workers": 0,
+    "device": "cuda",
+    "log_every": 1,
+    "epochs": 200,
+    "batch_size": 32,
+    "hidden_dim": 64,
+    "out_dim": 256,
+    "heads": 4,
+    "gnn_layers": 3,
+    "dropout": 0.1,
+    "mlp_dropout": 0.1,
+    "mlp_hidden": [
+      512,
+      256,
+      128
+    ],
+    "lr": 0.0003,
+    "weight_decay": 0.001,
+    "pos_weight": 1.0,
+    "pairwise_lambda": 0.5,
+    "score_hidden": 128,
+    "candidate_id": 1,
+    "candidate_name": "cand1_lr0.0003_wd0.001_mlp512-256-128_pl0.5"
+  },
+  "dataset_summary": {
+    "num_samples": 6991,
+    "num_positive": 3470,
+    "num_negative": 3521,
+    "avg_peptide_len": 18.677442425976256,
+    "avg_protein_len": 465.8483764840509
+  },
+  "kfold_mean": {
+    "val_accuracy": 0.8417402453314917,
+    "val_precision": 0.8500058505409107,
+    "val_recall": 0.8303266575928447,
+    "val_f1": 0.8389649520360545,
+    "val_roc_auc": 0.9089721703629522,
+    "val_pr_auc": 0.926831670366105
+  },
+  "final_test_metrics": {
+    "loss": 1.8088751260172562,
+    "accuracy": 0.6497498213009293,
+    "precision": 0.6175115207373272,
+    "recall": 0.7723342939481268,
+    "f1": 0.6862996158770807,
+    "roc_auc": 0.7529932348192204,
+    "pr_auc": 0.7767627126577787,
+    "threshold": 0.5,
+    "confusion_matrix": [
+      [
+        373,
+        332
+      ],
+      [
+        158,
+        536
+      ]
+    ],
+    "tn": 373,
+    "fp": 332,
+    "fn": 158,
+    "tp": 536,
+    "final_epochs": 180
+  },
+  "final_epochs": 180,
+  "best_epochs_per_fold": [
+    200,
+    139,
+    191,
+    199,
+    172
+  ]
+}
