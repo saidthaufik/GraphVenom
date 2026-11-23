@@ -1,0 +1,19 @@
+{
+  "csv_path": "/home/admin_/projek-rki/model1/0-neg/gan_decoy_sequence_clean.csv",
+  "split_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model1/a-fold",
+  "scenario": "unseen_protein",
+  "random_state": 42,
+  "n_splits": 5,
+  "batch_size": 256,
+  "learning_rate": 0.0003,
+  "epochs": 200,
+  "dropout_rate": 0.7,
+  "weight_decay": 0.005,
+  "conv1_channels": 16,
+  "conv2_channels": 32,
+  "dense_hidden": 16,
+  "threshold": 0.5,
+  "early_stopping": true,
+  "early_stopping_monitor": "val_pr_auc",
+  "early_stopping_patience": 10
+}

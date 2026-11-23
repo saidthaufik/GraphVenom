@@ -1,0 +1,22 @@
+{
+  "run_name": "model3_sing_reg",
+  "scenario": "unseen_peptide",
+  "threshold": 0.3,
+  "kfold_mean": {
+    "roc_auc": 0.824454678171473,
+    "average_precision": 0.9030202838905742,
+    "accuracy": 0.8186735523450613,
+    "precision": 0.8337329843595194,
+    "recall": 0.9592410962672794,
+    "f1_score": 0.8856170508805954
+  },
+  "kfold_std": {
+    "roc_auc": 0.17938343498157758,
+    "average_precision": 0.10975537160247816,
+    "accuracy": 0.11205646691425548,
+    "precision": 0.12573299231959242,
+    "recall": 0.03835185271314917,
+    "f1_score": 0.059780743844424666
+  },
+  "elapsed_seconds": 60.98038207204081
+}

@@ -1,0 +1,29 @@
+{
+  "run_name": "model4_sing_reg",
+  "selection_metric": "roc_auc",
+  "best_fold": 4,
+  "kfold_mean": {
+    "accuracy": 0.8442396018678829,
+    "precision": 0.8948257630484558,
+    "recall": 0.7777334888845681,
+    "f1_score": 0.8319858644995787,
+    "roc_auc": 0.9139934748644702,
+    "average_precision": 0.9291366485519628
+  },
+  "kfold_std": {
+    "accuracy": 0.01639876697350298,
+    "precision": 0.016561765714742736,
+    "recall": 0.027502262494306328,
+    "f1_score": 0.019219980170594987,
+    "roc_auc": 0.01676935196148312,
+    "average_precision": 0.013254401508136317
+  },
+  "final_test_metrics": {
+    "accuracy": 0.8663330950679057,
+    "precision": 0.9190082644628099,
+    "recall": 0.8011527377521613,
+    "f1_score": 0.8560431100846805,
+    "roc_auc": 0.9230670182108038,
+    "average_precision": 0.9394622711114585
+  }
+}

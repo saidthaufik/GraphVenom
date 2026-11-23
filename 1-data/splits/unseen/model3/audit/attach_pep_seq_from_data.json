@@ -1,0 +1,38 @@
+{
+  "source_rows": 3470,
+  "target_rows": 6940,
+  "output_rows": 6940,
+  "row_count_preserved": true,
+  "target_label_counts": {
+    "0": 3470,
+    "1": 3470
+  },
+  "source_unique_pep_id": 3124,
+  "source_pep_id_with_multiple_pep_seq": 42,
+  "source_pair_with_multiple_pep_seq": 49,
+  "ambiguous_policy": "first",
+  "mapping_status_counts": {
+    "resolved": 6669,
+    "resolved_ambiguous_first": 271
+  },
+  "mapping_source_counts": {
+    "pair_unique": 3349,
+    "pep_id_unique": 3320,
+    "pep_id_first": 150,
+    "pair_first": 121
+  },
+  "resolved_rows": 6940,
+  "unresolved_rows": 0,
+  "unresolved_by_label": {},
+  "empty_clean_pep_seq_rows": 0,
+  "empty_clean_prot_seq_rows": 0,
+  "sequence_pair_label_conflicts_on_resolved_rows": 150,
+  "ready_for_unseen_sequence_split": false,
+  "paths": {
+    "source_csv": "/home/admin_/projek-rki/0-data/data.csv",
+    "target_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5pn.csv",
+    "output_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5pn_sequence_aware.csv",
+    "audit_json": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit/attach_pep_seq_from_data.json",
+    "unresolved_csv": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit/attach_pep_seq_unresolved.csv"
+  }
+}

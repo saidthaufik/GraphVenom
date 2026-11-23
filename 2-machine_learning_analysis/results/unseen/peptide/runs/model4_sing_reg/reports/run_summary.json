@@ -1,0 +1,23 @@
+{
+  "run_name": "model4_sing_reg",
+  "scenario": "unseen_peptide",
+  "scenario_label": "Unseen Peptide",
+  "threshold": 0.5,
+  "elapsed_seconds": 1488.543294077972,
+  "kfold_mean": {
+    "accuracy": 0.8061323771006359,
+    "precision": 0.8373584139625322,
+    "recall": 0.753165535470523,
+    "f1_score": 0.7928348928556769,
+    "roc_auc": 0.885641176811944,
+    "average_precision": 0.9049096545371892
+  },
+  "kfold_std": {
+    "accuracy": 0.05561485898164758,
+    "precision": 0.06364206746550242,
+    "recall": 0.07600649058571338,
+    "f1_score": 0.07011932756409467,
+    "roc_auc": 0.050689913687546,
+    "average_precision": 0.04570597587855762
+  }
+}

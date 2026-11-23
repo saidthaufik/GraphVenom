@@ -1,0 +1,35 @@
+{
+  "num_samples": 6456,
+  "num_positive": 3398,
+  "num_negative": 3058,
+  "schema_info": {
+    "num_rows": 6456,
+    "num_columns": 8557,
+    "target_col": "label",
+    "target_distribution": {
+      "1": 3398,
+      "0": 3058
+    },
+    "feature_blocks": {
+      "pep_pssm": 400,
+      "pep_id": 150,
+      "pep_aas": 50,
+      "pep_pp": 50,
+      "prot_pssm": 400,
+      "prot_id": 4500,
+      "prot_aas": 1500,
+      "prot_pp": 1500
+    },
+    "concat_order": [
+      "pep_aas",
+      "prot_aas",
+      "pep_pssm",
+      "prot_pssm",
+      "pep_pp",
+      "prot_pp",
+      "pep_id",
+      "prot_id"
+    ],
+    "input_dim": 8550
+  }
+}

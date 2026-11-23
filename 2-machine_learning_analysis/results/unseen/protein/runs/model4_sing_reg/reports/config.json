@@ -1,0 +1,17 @@
+{
+  "input_csv": "/home/admin_/projek-rki/model4/0-esm2/data_esm2.csv",
+  "split_root": "/home/admin_/projek-rki/0-data/unseen_sequence/a-fold",
+  "scenario": "unseen_protein",
+  "random_state": 42,
+  "n_splits": 5,
+  "sae_epochs": 200,
+  "dnn_epochs": 200,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "hidden_nodes": 1024,
+  "activation": "relu",
+  "num_layers": 3,
+  "dropout_rate": 0.5,
+  "feature_reduction": 0.5,
+  "early_stopping_patience": 10
+}

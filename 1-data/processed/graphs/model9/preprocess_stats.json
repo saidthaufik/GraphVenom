@@ -1,0 +1,9 @@
+{
+  "num_samples": 6991,
+  "num_positive": 3470,
+  "num_negative": 3521,
+  "peptide_node_dim": 31,
+  "protein_node_dim": 31,
+  "peptide_edge_dim": 3,
+  "protein_edge_dim": 3
+}

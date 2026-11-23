@@ -1,0 +1,21 @@
+{
+  "split_type": "sequence-level",
+  "csv": "/home/admin_/projek-rki/model5/0-feat/processed_gat/metadata.csv",
+  "out_root": "/home/admin_/projek-rki/0-data/unseen_sequence/a-fold",
+  "n_splits": 5,
+  "seed": 42,
+  "peptide_level": "clean",
+  "protein_level": "clean",
+  "rows": 6991,
+  "positive": 3470,
+  "negative": 3521,
+  "unique_peptide_sequence_group": 2738,
+  "unique_protein_sequence_group": 895,
+  "single_domain_split_method": "StratifiedGroupKFold",
+  "both_split_method": "greedy_sequence_group_with_buffer",
+  "scenarios": [
+    "unseen_peptide",
+    "unseen_protein",
+    "unseen_both"
+  ]
+}

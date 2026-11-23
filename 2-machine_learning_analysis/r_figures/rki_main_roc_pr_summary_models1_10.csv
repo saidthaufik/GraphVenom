@@ -1,0 +1,11 @@
+Model,ROC-AUC,PR-AUC,n,positive,negative,Source,Status
+Model 1,0.9065222771508619,0.9253898135683337,5502,2751,2751,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model1_sing_reg/predictions/kfold_predictions.npz,ok
+Model 2,0.9356409523823215,0.9298140115169695,6878,3439,3439,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model2_sing_reg/predictions/kfold_predictions.npz,ok
+Model 3,0.9504258013312958,0.96460979935162,5552,2776,2776,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model3_sing_reg/model3_sing_reg/predictions/kfold_predictions.npz,ok
+Model 4,0.9149202222376868,0.929827350333401,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model4_sing_reg/predictions/kfold_predictions.npz,ok
+Model 5,0.7851371895058291,0.8207170648219083,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model5_film_gat_sing_es/predictions/kfold_predictions.npz,ok
+Model 6,0.9574701530570475,0.9701217072275947,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model6_film_gat_af_sing_es/predictions/kfold_predictions.npz,ok
+Model 7,0.9039646595411972,0.9297356321959127,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model7_film_gine_sing_es/predictions/kfold_predictions.npz,ok
+Model 8,0.9457067580069427,0.960906140627942,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model8_film_gine_af_sing_es/predictions/kfold_predictions.npz,ok
+Model 9,0.8846608562434503,0.9092514269920094,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model9_film_gcn_sing_es/predictions/kfold_predictions.npz,ok
+Model 10,0.9600146650674615,0.9719694784940014,5592,2776,2816,/home/admin_/projek-rki/r_single_gan_reg/a-fold/model10_film_gcn_af_sing_es/predictions/kfold_predictions.npz,ok

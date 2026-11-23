@@ -1,0 +1,77 @@
+{
+  "scenario": "unseen_both",
+  "config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "grad_clip": 1.0,
+    "threshold": 0.5,
+    "num_workers": 0,
+    "device": "cuda",
+    "log_every": 1,
+    "early_stopping_monitor": "val_pr_auc",
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.001,
+    "restore_best_weights": true,
+    "epochs": 200,
+    "batch_size": 64,
+    "hidden_dim": 64,
+    "out_dim": 256,
+    "heads": 4,
+    "gnn_layers": 4,
+    "dropout": 0.15,
+    "mlp_dropout": 0.15,
+    "mlp_hidden": [
+      256,
+      128
+    ],
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "pos_weight": 1.0,
+    "pairwise_lambda": 0.0,
+    "score_hidden": 128,
+    "global_mode": "length",
+    "film_target": "protein",
+    "film_scale": 0.2,
+    "candidate_id": 1,
+    "candidate_name": "cand1_length_protein_fs0.2_lr0.0005_wd0.0001_do0.15_mdo0.15_mlp256-128",
+    "inner_val_size": 0.2,
+    "scenario": "unseen_both",
+    "source_active_log_root": "/home/admin_/projek-rki/r_single_gan_reg/b-log_result/model6_film_gat_af_sing_es"
+  },
+  "kfold_mean": {
+    "val_accuracy": 0.8936759822461289,
+    "val_precision": 0.896228575978076,
+    "val_recall": 0.8994902571821626,
+    "val_f1": 0.8957944848633937,
+    "val_roc_auc": 0.9466621727113473,
+    "val_pr_auc": 0.9620742663935331
+  },
+  "metrics": {
+    "ROC-AUC": {
+      "mean": 0.9466621727113473,
+      "std": 0.029033572107698177
+    },
+    "PR-AUC": {
+      "mean": 0.9620742663935331,
+      "std": 0.026299500365533416
+    },
+    "Accuracy": {
+      "mean": 0.8936759822461289,
+      "std": 0.051484303266759616
+    },
+    "Precision": {
+      "mean": 0.896228575978076,
+      "std": 0.098979220984429
+    },
+    "Recall": {
+      "mean": 0.8994902571821626,
+      "std": 0.020655693607545222
+    },
+    "F1": {
+      "mean": 0.8957944848633937,
+      "std": 0.058712102008227
+    }
+  },
+  "elapsed_seconds": 300.20369987899903
+}

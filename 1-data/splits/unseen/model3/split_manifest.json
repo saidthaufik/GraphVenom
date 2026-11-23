@@ -1,0 +1,28 @@
+{
+  "source_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5pn_sequence_aware.csv",
+  "clean_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5pn_sequence_clean.csv",
+  "out_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/a-fold",
+  "audit_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit",
+  "n_splits": 5,
+  "seed": 42,
+  "sequence_cleaning": "uppercase and keep ACDEFGHIKLMNPQRSTVWY only",
+  "conflict_policy": "drop all rows whose clean peptide+protein sequence pair has both labels",
+  "single_domain_split_method": "StratifiedGroupKFold",
+  "unseen_both_split_method": "greedy_sequence_groups_with_buffer",
+  "cleaning_summary": {
+    "raw_rows": 6940,
+    "raw_pos": 3470,
+    "raw_neg": 3470,
+    "conflict_sequence_pairs": 150,
+    "conflict_rows": 2188,
+    "conflict_pos": 153,
+    "conflict_neg": 2035,
+    "clean_rows": 4752,
+    "clean_pos": 3317,
+    "clean_neg": 1435,
+    "clean_unique_peptide_sequence": 2697,
+    "clean_unique_protein_sequence": 812,
+    "clean_unique_sequence_pair": 4552,
+    "remaining_sequence_pair_label_conflicts": 0
+  }
+}

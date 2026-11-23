@@ -1,0 +1,77 @@
+{
+  "scenario": "unseen_peptide",
+  "config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "n_splits": 5,
+    "grad_clip": 1.0,
+    "threshold": 0.5,
+    "num_workers": 0,
+    "device": "cuda",
+    "log_every": 1,
+    "early_stopping_monitor": "val_pr_auc",
+    "early_stopping_patience": 3,
+    "early_stopping_min_delta": 0.001,
+    "restore_best_weights": true,
+    "epochs": 200,
+    "batch_size": 64,
+    "hidden_dim": 64,
+    "out_dim": 256,
+    "heads": 4,
+    "gnn_layers": 4,
+    "dropout": 0.2,
+    "mlp_dropout": 0.2,
+    "mlp_hidden": [
+      256,
+      128
+    ],
+    "lr": 0.0005,
+    "weight_decay": 0.0003,
+    "pos_weight": 1.0,
+    "pairwise_lambda": 0.0,
+    "score_hidden": 128,
+    "global_mode": "length",
+    "film_target": "protein",
+    "film_scale": 0.2,
+    "candidate_id": 1,
+    "candidate_name": "cand1_length_protein_fs0.2_lr0.0005_wd0.0003_do0.2_mdo0.2_mlp256-128",
+    "inner_val_size": 0.2,
+    "scenario": "unseen_peptide",
+    "source_active_log_root": "/home/admin_/projek-rki/r_single_gan_reg/b-log_result/model10_film_gcn_af_sing_es"
+  },
+  "kfold_mean": {
+    "val_accuracy": 0.9164359241935347,
+    "val_precision": 0.9432357324898042,
+    "val_recall": 0.8866704374776575,
+    "val_f1": 0.9136453609710526,
+    "val_roc_auc": 0.9550935177009341,
+    "val_pr_auc": 0.9675389652471651
+  },
+  "metrics": {
+    "ROC-AUC": {
+      "mean": 0.9550935177009341,
+      "std": 0.0030745845349505092
+    },
+    "PR-AUC": {
+      "mean": 0.9675389652471651,
+      "std": 0.002520492714173754
+    },
+    "Accuracy": {
+      "mean": 0.9164359241935347,
+      "std": 0.009575374742068283
+    },
+    "Precision": {
+      "mean": 0.9432357324898042,
+      "std": 0.024444521095758495
+    },
+    "Recall": {
+      "mean": 0.8866704374776575,
+      "std": 0.018655133384574044
+    },
+    "F1": {
+      "mean": 0.9136453609710526,
+      "std": 0.008046010376701598
+    }
+  },
+  "elapsed_seconds": 646.4091133439797
+}

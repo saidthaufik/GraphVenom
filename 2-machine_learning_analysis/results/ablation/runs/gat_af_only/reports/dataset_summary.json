@@ -1,0 +1,7 @@
+{
+  "num_samples": 6991,
+  "num_positive": 3470,
+  "num_negative": 3521,
+  "avg_peptide_len": 18.677442425976256,
+  "avg_protein_len": 465.403804892004
+}

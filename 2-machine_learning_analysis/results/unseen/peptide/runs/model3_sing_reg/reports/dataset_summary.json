@@ -1,0 +1,7 @@
+{
+  "num_samples": 4752,
+  "num_positive": 3317,
+  "num_negative": 1435,
+  "feature_count": 2048,
+  "note": "Model 3 clean dataset is imbalanced after sequence-pair conflict removal."
+}

@@ -1,0 +1,16 @@
+scenario,fold,train_rows,train_pos,train_neg,train_pos_rate,test_rows,test_pos,test_neg,test_pos_rate,buffer_rows,buffer_pos,buffer_neg,buffer_pos_rate,train_unique_peptide_seq,test_unique_peptide_seq,train_unique_protein_seq,test_unique_protein_seq,train_test_index_overlap,train_buffer_index_overlap,test_buffer_index_overlap,peptide_sequence_overlap_train_test,protein_sequence_overlap_train_test,pair_sequence_overlap_train_test,buffer_peptide_overlap_train,buffer_peptide_overlap_test,buffer_protein_overlap_train,buffer_protein_overlap_test,concept_ok,has_both_classes_train,has_both_classes_test,ready
+unseen_peptide,1,6050,3009,3041,0.497355,941,461,480,0.489904,0,0,0,,2330,408,871,317,0,0,0,0,293,0,0,0,0,0,True,True,True,True
+unseen_peptide,2,5561,2734,2827,0.491638,1430,736,694,0.514685,0,0,0,,2170,568,832,422,0,0,0,0,359,0,0,0,0,0,True,True,True,True
+unseen_peptide,3,5070,2565,2505,0.505917,1921,905,1016,0.471109,0,0,0,,2164,574,673,589,0,0,0,0,367,0,0,0,0,0,True,True,True,True
+unseen_peptide,4,5683,2793,2890,0.491466,1308,677,631,0.517584,0,0,0,,2151,587,852,397,0,0,0,0,354,0,0,0,0,0,True,True,True,True
+unseen_peptide,5,5600,2779,2821,0.49625,1391,691,700,0.496765,0,0,0,,2137,601,850,397,0,0,0,0,352,0,0,0,0,0,True,True,True,True
+unseen_protein,1,5882,2892,2990,0.49167,1109,578,531,0.52119,0,0,0,,2528,812,727,168,0,0,0,602,0,0,0,0,0,0,True,True,True,True
+unseen_protein,2,5227,2808,2419,0.537211,1764,662,1102,0.375283,0,0,0,,2491,1065,725,170,0,0,0,818,0,0,0,0,0,0,True,True,True,True
+unseen_protein,3,5249,2581,2668,0.491713,1742,889,853,0.510333,0,0,0,,2390,1221,710,185,0,0,0,873,0,0,0,0,0,0,True,True,True,True
+unseen_protein,4,5840,2899,2941,0.496404,1151,571,580,0.49609,0,0,0,,2534,835,707,188,0,0,0,631,0,0,0,0,0,0,True,True,True,True
+unseen_protein,5,5766,2700,3066,0.468262,1225,770,455,0.628571,0,0,0,,2425,906,711,184,0,0,0,593,0,0,0,0,0,0,True,True,True,True
+unseen_both,1,4409,2213,2196,0.501928,215,136,79,0.632558,2367,1121,1246,0.473595,2095,121,562,98,0,0,0,0,0,0,683,78,255,59,True,True,True,True
+unseen_both,2,4463,2290,2173,0.513108,268,108,160,0.402985,2260,1072,1188,0.474336,2008,191,679,81,0,0,0,0,0,0,620,162,277,69,True,True,True,True
+unseen_both,3,4452,2111,2341,0.474169,257,168,89,0.653696,2282,1191,1091,0.521911,1888,211,683,80,0,0,0,0,0,0,509,137,278,66,True,True,True,True
+unseen_both,4,4467,2327,2140,0.520931,272,122,150,0.448529,2252,1021,1231,0.453375,2005,213,672,82,0,0,0,0,0,0,628,166,274,72,True,True,True,True
+unseen_both,5,4482,2169,2313,0.483936,288,166,122,0.576389,2221,1135,1086,0.511031,1911,230,670,82,0,0,0,0,0,0,523,165,277,76,True,True,True,True

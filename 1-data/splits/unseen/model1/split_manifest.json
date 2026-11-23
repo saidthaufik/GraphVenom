@@ -1,0 +1,28 @@
+{
+  "source_csv": "/home/admin_/projek-rki/model1/0-neg/gan_decoy.csv",
+  "clean_csv": "/home/admin_/projek-rki/model1/0-neg/gan_decoy_sequence_clean.csv",
+  "out_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model1/a-fold",
+  "audit_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model1/audit",
+  "n_splits": 5,
+  "seed": 42,
+  "sequence_cleaning": "uppercase and keep ACDEFGHIKLMNPQRSTVWY only",
+  "conflict_policy": "drop all rows whose clean peptide+protein sequence pair has both labels",
+  "single_domain_split_method": "StratifiedGroupKFold",
+  "unseen_both_split_method": "greedy_sequence_groups_with_buffer",
+  "cleaning_summary": {
+    "raw_rows": 6878,
+    "raw_pos": 3439,
+    "raw_neg": 3439,
+    "conflict_sequence_pairs": 41,
+    "conflict_rows": 422,
+    "conflict_pos": 41,
+    "conflict_neg": 381,
+    "clean_rows": 6456,
+    "clean_pos": 3398,
+    "clean_neg": 3058,
+    "clean_unique_peptide_sequence": 2731,
+    "clean_unique_protein_sequence": 884,
+    "clean_unique_sequence_pair": 6258,
+    "remaining_sequence_pair_label_conflicts": 0
+  }
+}

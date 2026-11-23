@@ -1,0 +1,27 @@
+# This file was created Tue Oct  6 13:12:40 2026
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2021.6 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /media/biofarmaka/545ed5cd-03d4-4e08-bd8d-f43a31b40413/download/rom/MD_RKI/MD_Kandidat_Terbaik/NS_02__PLCG1__QPPVPPQRPM_Kontrol
+# Command line:
+#   gmx rmsf -s md.tpr -f md.xtc -n index.ndx -o RMSF_Control.xvg -res
+# gmx rmsf is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Residue"
+@    yaxis  label "(nm)"
+@TYPE xy
+    1   0.2291
+    2   0.1480
+    3   0.1426
+    4   0.1684
+    5   0.1299
+    6   0.1412
+    7   0.1426
+    8   0.1248
+    9   0.1418
+   10   0.1809

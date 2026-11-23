@@ -1,0 +1,8 @@
+{
+  "input_csv": "/home/admin_/projek-rki/model2/0-neg/gan_decoy.csv",
+  "random_seed": 42,
+  "outer_splits": 5,
+  "inner_splits": 3,
+  "n_iter_search": 1,
+  "script_name": "xgboost_regularized.py"
+}

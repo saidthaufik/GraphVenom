@@ -1,0 +1,5 @@
+﻿system,target,peptide,role,species,simulation_inputs_status,analysis_scope,summary_frames,docking_structure,energy_log_present
+NOS2_VMEVLK,NOS2,VMEVLK,candidate,Trimeresurus_albolabris,trajectory_topology_runinput_index_not_supplied,derived trajectory analysis and endpoint energy outputs,201,3-docking_analysis/results/best_poses/ab51/053__A0A2D0TC04_pep31__P35228.pdb.gz,True
+NOS2_LETHKLASLW,NOS2,LETHKLASLW,control,reference_peptide,trajectory_topology_runinput_index_not_supplied,derived trajectory analysis and endpoint energy outputs,201,3-docking_analysis/results/controls/NOS2_LETHKLASLW.pdb,True
+PLCG1_KESEFR,PLCG1,KESEFR,candidate,Naja_sumatrana,trajectory_topology_runinput_index_not_supplied,derived trajectory analysis and endpoint energy outputs,201,3-docking_analysis/results/best_poses/ab66/063__P81115_pep6__P19174.pdb.gz,False
+PLCG1_QPPVPPQRPM,PLCG1,QPPVPPQRPM,control,reference_peptide,trajectory_topology_runinput_index_not_supplied,derived trajectory analysis and endpoint energy outputs,201,3-docking_analysis/results/controls/PLCG1_QPPVPPQRPM.pdb,False

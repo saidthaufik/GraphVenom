@@ -1,0 +1,13 @@
+{
+  "num_samples": 6991,
+  "num_positive": 3470,
+  "num_negative": 3521,
+  "feature_count": 2560,
+  "environment_info": {
+    "seed": 42,
+    "gpu_available": true,
+    "gpu_devices": [
+      "/physical_device:GPU:0"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "num_samples": 6878,
+  "num_features": 3940,
+  "target_col": "label",
+  "class_labels": [
+    "0",
+    "1"
+  ],
+  "num_classes": 2
+}

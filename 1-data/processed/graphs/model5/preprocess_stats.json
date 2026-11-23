@@ -1,0 +1,11 @@
+{
+  "num_samples": 6991,
+  "num_positive": 3470,
+  "num_negative": 3521,
+  "peptide_dummy_count": 0,
+  "protein_dummy_count": 0,
+  "peptide_unknown_total": 0,
+  "protein_unknown_total": 0,
+  "node_dim": 31,
+  "edge_dim": 3
+}

@@ -1,0 +1,34 @@
+{
+  "run_name": "model2_sing_reg",
+  "selected_target": "label",
+  "selected_target_reason": "Kolom `label` dipilih sebagai target karena ada secara eksplisit, jumlah kelasnya kecil, dan script pembentuk dataset random menambahkan `label=1` untuk positif serta `label=0` untuk negatif acak.",
+  "kfold_mean": {
+    "ROC-AUC": 0.9328098178536649,
+    "PR-AUC": 0.9212851659368528,
+    "Accuracy": 0.8902422832980973,
+    "Precision": 0.8866412537535664,
+    "Recall": 0.9133390880471209,
+    "F1": 0.895777660223346
+  },
+  "kfold_std": {
+    "ROC-AUC": 0.0054621568410780285,
+    "PR-AUC": 0.0071547990969775535,
+    "Accuracy": 0.06003257407916791,
+    "Precision": 0.10999001783936381,
+    "Recall": 0.02278998944101497,
+    "F1": 0.048623604257455946
+  },
+  "voted_params": {
+    "colsample_bytree": 0.014,
+    "gamma": 42.0,
+    "learning_rate": 0.001,
+    "max_depth": 1,
+    "min_child_weight": 180,
+    "n_estimators": 200,
+    "reg_alpha": 46.0,
+    "reg_lambda": 180.0,
+    "scale_pos_weight": 1.0,
+    "subsample": 0.25
+  },
+  "num_folds": 5
+}

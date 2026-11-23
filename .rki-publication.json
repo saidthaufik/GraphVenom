@@ -1,0 +1,5 @@
+{
+  "layout_version": 3,
+  "scope": "GraphVenom benchmark, generalization, ablation, screening, docking controls and derived MD analysis; raw MD simulations not included",
+  "layout": "numbered-research-stages"
+}

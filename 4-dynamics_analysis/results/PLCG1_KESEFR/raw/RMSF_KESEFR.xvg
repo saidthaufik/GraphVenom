@@ -1,0 +1,23 @@
+# This file was created Tue Oct  6 11:50:04 2026
+# Created by:
+#                       :-) GROMACS - gmx rmsf, 2021.6 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /media/biofarmaka/545ed5cd-03d4-4e08-bd8d-f43a31b40413/download/rom/MD_RKI/MD_Kandidat_Terbaik/NS_01__PLCG1__KESEFR
+# Command line:
+#   gmx rmsf -s md.tpr -f MD_center.xtc -n index_analysis.ndx -o RMSF_KESEFR.xvg -res
+# gmx rmsf is part of G R O M A C S:
+#
+# Gromacs Runs On Most of All Computer Systems
+#
+@    title "RMS fluctuation"
+@    xaxis  label "Residue"
+@    yaxis  label "(nm)"
+@TYPE xy
+    1   0.1514
+    2   0.1149
+    3   0.1507
+    4   0.1202
+    5   0.1338
+    6   0.1480

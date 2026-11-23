@@ -1,0 +1,10 @@
+{
+  "input_csv": "/home/admin_/projek-rki/model2/0-neg/gan_decoy_sequence_clean.csv",
+  "random_seed": 42,
+  "split_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model2/a-fold",
+  "scenario": "unseen_peptide",
+  "outer_splits": 5,
+  "inner_splits": 3,
+  "n_iter_search": 1,
+  "script_name": "train_unseen_peptide_c2_t0512.py"
+}

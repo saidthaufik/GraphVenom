@@ -1,0 +1,22 @@
+{
+  "run_name": "model3_sing_reg",
+  "scenario": "unseen_both",
+  "threshold": 0.3,
+  "kfold_mean": {
+    "roc_auc": 0.824000017273837,
+    "average_precision": 0.906410884827068,
+    "accuracy": 0.795098456695553,
+    "precision": 0.7934575337888186,
+    "recall": 0.9466338398353482,
+    "f1_score": 0.8590682380608365
+  },
+  "kfold_std": {
+    "roc_auc": 0.14743179507001644,
+    "average_precision": 0.07451616250823949,
+    "accuracy": 0.07627709449590026,
+    "precision": 0.07436227355710971,
+    "recall": 0.08698339797751214,
+    "f1_score": 0.049864147025164264
+  },
+  "elapsed_seconds": 58.52713796205353
+}

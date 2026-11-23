@@ -1,0 +1,12 @@
+{
+  "num_samples": 6991,
+  "num_positive": 3470,
+  "num_negative": 3521,
+  "peptide_node_dim": 31,
+  "protein_node_dim": 38,
+  "peptide_edge_dim": 3,
+  "protein_edge_dim": 4,
+  "protein_structure_found": 6991,
+  "protein_structure_missing": 0,
+  "avg_protein_contacts": 1463.9492204262624
+}

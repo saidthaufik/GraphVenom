@@ -1,0 +1,16 @@
+{
+  "raw_rows": 6878,
+  "raw_pos": 3439,
+  "raw_neg": 3439,
+  "conflict_sequence_pairs": 42,
+  "conflict_rows": 400,
+  "conflict_pos": 42,
+  "conflict_neg": 358,
+  "clean_rows": 6478,
+  "clean_pos": 3397,
+  "clean_neg": 3081,
+  "clean_unique_peptide_sequence": 2731,
+  "clean_unique_protein_sequence": 884,
+  "clean_unique_sequence_pair": 6273,
+  "remaining_sequence_pair_label_conflicts": 0
+}

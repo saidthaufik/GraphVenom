@@ -1,0 +1,6 @@
+2-machine_learning_analysis/cache/
+3-docking_analysis/cache/
+4-dynamics_analysis/cache/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

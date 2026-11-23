@@ -1,0 +1,16 @@
+scenario,fold,split_method,split_group,test_groups,train_rows,train_pos,train_neg,test_rows,test_pos,test_neg,buffer_rows,peptide_leakage,protein_leakage,test_peptide_groups,test_protein_groups,buffer_pos,buffer_neg
+unseen_peptide,1,StratifiedGroupKFold,peptide_group,552.0,3676,2556,1120,1076,761,315,0,0.0,,,,,
+unseen_peptide,2,StratifiedGroupKFold,peptide_group,551.0,3840,2691,1149,912,626,286,0,0.0,,,,,
+unseen_peptide,3,StratifiedGroupKFold,peptide_group,511.0,3954,2732,1222,798,585,213,0,0.0,,,,,
+unseen_peptide,4,StratifiedGroupKFold,peptide_group,545.0,3853,2696,1157,899,621,278,0,0.0,,,,,
+unseen_peptide,5,StratifiedGroupKFold,peptide_group,538.0,3685,2593,1092,1067,724,343,0,0.0,,,,,
+unseen_protein,1,StratifiedGroupKFold,protein_group,160.0,3547,2579,968,1205,738,467,0,,0.0,,,,
+unseen_protein,2,StratifiedGroupKFold,protein_group,161.0,3918,2811,1107,834,506,328,0,,0.0,,,,
+unseen_protein,3,StratifiedGroupKFold,protein_group,160.0,3780,2516,1264,972,801,171,0,,0.0,,,,
+unseen_protein,4,StratifiedGroupKFold,protein_group,167.0,3959,2748,1211,793,569,224,0,,0.0,,,,
+unseen_protein,5,StratifiedGroupKFold,protein_group,164.0,3804,2614,1190,948,703,245,0,,0.0,,,,
+unseen_both,1,greedy_sequence_groups_with_buffer,peptide_group+protein_group,,3055,2035,1020,203,158,45,1494,0.0,0.0,533.0,160.0,1124.0,370.0
+unseen_both,2,greedy_sequence_groups_with_buffer,peptide_group+protein_group,,3060,2127,933,209,141,68,1483,0.0,0.0,539.0,162.0,1049.0,434.0
+unseen_both,3,greedy_sequence_groups_with_buffer,peptide_group+protein_group,,3042,2094,948,190,139,51,1520,0.0,0.0,540.0,163.0,1084.0,436.0
+unseen_both,4,greedy_sequence_groups_with_buffer,peptide_group+protein_group,,3040,2091,949,189,128,61,1523,0.0,0.0,542.0,163.0,1098.0,425.0
+unseen_both,5,greedy_sequence_groups_with_buffer,peptide_group+protein_group,,3048,2267,781,198,97,101,1506,0.0,0.0,543.0,164.0,953.0,553.0

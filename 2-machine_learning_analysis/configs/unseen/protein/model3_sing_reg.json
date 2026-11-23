@@ -1,0 +1,30 @@
+{
+  "scenario": "unseen_protein",
+  "scenario_label": "Unseen Protein",
+  "model_name": "model3_sing_reg",
+  "data_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5pn_sequence_clean.csv",
+  "split_root": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/a-fold",
+  "output_root": "/home/admin_/projek-rki/r_unseen_sequence_protein",
+  "run_name": "model3_sing_reg",
+  "threshold": 0.3,
+  "inner_val_size": 0.2,
+  "random_seed": 42,
+  "n_splits": 5,
+  "sae_epochs": 1,
+  "dnn_epochs": 20,
+  "batch_size": 128,
+  "learning_rate": 0.0002,
+  "hidden_nodes": 16,
+  "activation": "relu",
+  "num_layers": 1,
+  "dropout_rate": 0.88,
+  "feature_reduction": 0.3,
+  "early_stopping_patience": 2,
+  "environment_info": {
+    "seed": 42,
+    "gpu_available": true,
+    "gpu_devices": [
+      "/physical_device:GPU:0"
+    ]
+  }
+}

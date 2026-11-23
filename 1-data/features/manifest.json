@@ -1,0 +1,65 @@
+[
+  {
+    "source": "model1/0-neg/gan_decoy.csv",
+    "compressed_file": "1-data/features/model1/0-neg/gan_decoy.csv.gz",
+    "extract_to": "1-data/features/model1/0-neg/gan_decoy.csv",
+    "uncompressed_sha256": "ef24f42df59fa91cf0655599f3166456116dfa7c624bf811e34e6d6f9b3ebcd0",
+    "compressed_sha256": "8b7d79bb14c019e48c9ed191431895e97c190744d18d412ecca5f9ff5d00def3",
+    "source_bytes": 343069003,
+    "compressed_bytes": 66320246
+  },
+  {
+    "source": "model2/0-neg/gan_decoy.csv",
+    "compressed_file": "1-data/features/model2/0-neg/gan_decoy.csv.gz",
+    "extract_to": "1-data/features/model2/0-neg/gan_decoy.csv",
+    "uncompressed_sha256": "6e0fb5a39e9350728e8d9609f5a983b28e60ca4b1bf1d0692dbdc7a7f4fcab19",
+    "compressed_sha256": "b7ea1e2b0a360706e6ffefcca0f7f61ee97ce4058bd7dc8c6b0d99aad4e60e63",
+    "source_bytes": 346654529,
+    "compressed_bytes": 67066350
+  },
+  {
+    "source": "model3/1-feat_prott5/prott5pn.csv",
+    "compressed_file": "1-data/features/model3/1-feat_prott5/prott5pn.csv.gz",
+    "extract_to": "1-data/features/model3/1-feat_prott5/prott5pn.csv",
+    "uncompressed_sha256": "92451e58c32e95f8cbd5bc342257c9820482a07f158a93558c9762a8a720be92",
+    "compressed_sha256": "e14a530710e7fd926c1cf5502eed7af2d59a47f6f03ed7cb9d272923d4f62e50",
+    "source_bytes": 176170215,
+    "compressed_bytes": 60333857
+  },
+  {
+    "source": "model4/0-esm2/data_esm2.csv",
+    "compressed_file": "1-data/features/model4/0-esm2/data_esm2.csv.gz",
+    "extract_to": "1-data/features/model4/0-esm2/data_esm2.csv",
+    "uncompressed_sha256": "01f2b6d6d0be5e9ab0a0ad9115b2c3f2ca61e3cc3817c5ac25c72f192af60c3c",
+    "compressed_sha256": "4bee38cb5d132934de8e6a1fe60197a318bcb7c539bf5a4f92ea45940fe67f07",
+    "source_bytes": 214501101,
+    "compressed_bytes": 77947910
+  },
+  {
+    "source": "model1/0-neg/gan_decoy_sequence_clean.csv",
+    "compressed_file": "1-data/features/model1/0-neg/gan_decoy_sequence_clean.csv.gz",
+    "extract_to": "1-data/features/model1/0-neg/gan_decoy_sequence_clean.csv",
+    "uncompressed_sha256": "8511884da139c89e21a2b05169b752341a0c78f8ea2dc87a920469436e1e13fe",
+    "compressed_sha256": "b42a971447952658440f22dd65ce7798da00c8b988faf87e06637e4aded97dfd",
+    "source_bytes": 325060839,
+    "compressed_bytes": 64574851
+  },
+  {
+    "source": "model2/0-neg/gan_decoy_sequence_clean.csv",
+    "compressed_file": "1-data/features/model2/0-neg/gan_decoy_sequence_clean.csv.gz",
+    "extract_to": "1-data/features/model2/0-neg/gan_decoy_sequence_clean.csv",
+    "uncompressed_sha256": "a34dd12c6a7b9498d98435fa29a9ae82ef246d49dc0210ba77488ad88cdf2175",
+    "compressed_sha256": "d6a4ffde172612ed7bec32c731e0fb9e21a745e8bb2f59d1781e2c90fdbcde2d",
+    "source_bytes": 329529503,
+    "compressed_bytes": 65473225
+  },
+  {
+    "source": "model3/1-feat_prott5/prott5pn_sequence_clean.csv",
+    "compressed_file": "1-data/features/model3/1-feat_prott5/prott5pn_sequence_clean.csv.gz",
+    "extract_to": "1-data/features/model3/1-feat_prott5/prott5pn_sequence_clean.csv",
+    "uncompressed_sha256": "03a2f15f20cc9a2334c737c73b52cd66fd019095a0edbbd18ce06d97d42324c8",
+    "compressed_sha256": "224f6b682ee76e2d43384a446e74e976b5814edd90076e8c53c5326202ee8ff6",
+    "source_bytes": 122828350,
+    "compressed_bytes": 43791430
+  }
+]

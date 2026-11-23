@@ -1,0 +1,112 @@
+{
+  "paths": {
+    "positive_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5.csv",
+    "active_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5pn.csv",
+    "random_csv": "/home/admin_/projek-rki/model3/1-feat_prott5/prott5_random_1to1.csv",
+    "report_json": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit/model3_unseen_sequence_audit.json",
+    "recovered_csv": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit/prott5pn_with_recovered_pep_seq_audit.csv",
+    "conflict_pairs_csv": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit/conflict_pairs_candidate.csv",
+    "conflict_rows_csv": "/home/admin_/projek-rki/0-data/unseen_sequence/model3/audit/conflict_rows_candidate.csv"
+  },
+  "file_md5": {
+    "positive_csv": "78dfe1d1bcb25f233ca31ad1af009ccd",
+    "active_csv": "2608426c27b923ca6349e9bc457c9cb1",
+    "random_csv": "d345223d27b17a3fa310d51fe2cc1b96"
+  },
+  "positive_source_summary": {
+    "rows": 3470,
+    "columns": 2052,
+    "has_pep_seq": true,
+    "has_prot_seq": true,
+    "has_label": false,
+    "unique_pdb_id": 3124,
+    "unique_uniprot_id": 895,
+    "unique_id_pairs": 3398,
+    "unique_pep_seq": 2771,
+    "unique_prot_seq": 895,
+    "unique_sequence_pairs": 3465,
+    "duplicate_id_pairs": 72
+  },
+  "active_dataset_summary": {
+    "rows": 6940,
+    "columns": 2052,
+    "has_pep_seq": false,
+    "has_prot_seq": true,
+    "has_label": true,
+    "label_counts": {
+      "0": 3470,
+      "1": 3470
+    },
+    "unique_pdb_id": 3124,
+    "unique_uniprot_id": 895,
+    "unique_id_pairs": 6868,
+    "unique_prot_seq": 895,
+    "duplicate_id_pairs": 72
+  },
+  "random_dataset_summary": {
+    "rows": 6940,
+    "columns": 2052,
+    "has_pep_seq": false,
+    "has_prot_seq": true,
+    "has_label": true,
+    "label_counts": {
+      "0": 3470,
+      "1": 3470
+    },
+    "unique_pdb_id": 3124,
+    "unique_uniprot_id": 895,
+    "unique_id_pairs": 6868,
+    "unique_prot_seq": 895,
+    "duplicate_id_pairs": 72
+  },
+  "active_vs_random": {
+    "same_shape": true,
+    "same_columns": true,
+    "same_id_label_key_set": false,
+    "active_only_id_label_keys": 3478,
+    "random_only_id_label_keys": 3478
+  },
+  "positive_source_identity_issues": {
+    "pdb_id_with_multiple_pep_seq": 42,
+    "pdb_uniprot_with_multiple_pep_seq": 49,
+    "duplicate_pdb_uniprot_rows": 72,
+    "duplicate_pep_prot_sequence_rows": 5
+  },
+  "active_pair_consistency": {
+    "positive_rows_not_in_source_id_pairs": 12,
+    "negative_rows_colliding_source_positive_id_pairs": 0
+  },
+  "pep_seq_recovery_by_embedding": {
+    "pep_embedding_columns": 1024,
+    "source_unique_peptide_embedding_fp": 2770,
+    "source_embedding_fp_with_multiple_pep_seq": 1,
+    "active_rows": 6940,
+    "active_rows_recovered_unique": 455,
+    "active_rows_ambiguous": 0,
+    "active_rows_missing_embedding_match": 6485,
+    "active_rows_unresolved": 6485
+  },
+  "sequence_pair_conflict_audit_after_recovery": {
+    "raw_rows": 6940,
+    "raw_pos": 3470,
+    "raw_neg": 3470,
+    "empty_clean_sequence_rows": 6485,
+    "conflict_sequence_pairs": 270,
+    "conflict_rows": 4299,
+    "conflict_pos": 981,
+    "conflict_neg": 3318,
+    "clean_rows_if_conflicts_dropped": 2641,
+    "clean_pos_if_conflicts_dropped": 2489,
+    "clean_neg_if_conflicts_dropped": 152,
+    "clean_unique_peptide_sequence": 293,
+    "clean_unique_protein_sequence": 716,
+    "clean_unique_sequence_pair": 1050,
+    "remaining_sequence_pair_label_conflicts": 0
+  },
+  "audit_decision": {
+    "pep_seq_recovery_ready": false,
+    "sequence_cleaning_ready": false,
+    "can_generate_model3_unseen_splits_after_dropping_conflicts": false,
+    "recommended_next_step": "Generate model3-specific clean CSV and unseen_sequence folds from recovered_pep_seq, dropping contradictory clean peptide+protein sequence pairs."
+  }
+}
