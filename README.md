@@ -40,6 +40,8 @@ Sumber komponen: XGBoost oleh [Chen dan Guestrin (2016)](https://arxiv.org/abs/1
 
 ### Hyperparameter
 
+Ruang pencarian bersama Model 5–10 ditetapkan dalam `configs/tuning/common_graph_grid.json`: masing-masing 16 kombinasi learning rate, weight decay, graph dropout, dan predictor dropout, dengan protokol evaluasi yang sama. Evaluasi ini belum dijalankan; berkas JSON merupakan spesifikasi dan belum dibaca otomatis oleh trainer. Tabel di bawah tetap mendokumentasikan hasil eksperimen terdahulu.
+
 Konfigurasi final seluruh model tersedia di `configs/benchmark/`. Tabel berikut merangkum pencarian awal GraphVenom-GAT, GINE, dan GCN: masing-masing 6, 8, dan 8 kombinasi yang dievaluasi pada lima fold. Nilai terpilih juga digunakan pada benchmark final. **Tetap** berarti parameter memakai satu nilai sepanjang pencarian.
 
 | Model | Hyperparameter | Kandidat | Nilai terpilih |

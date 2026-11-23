@@ -1,0 +1,86 @@
+{
+    "description":  "Harmonized graph-model search specification; not an execution result",
+    "status":  "not_run",
+    "candidate_count_per_model":  16,
+    "fold_training_count_per_model":  80,
+    "search_grid":  {
+                        "lr":  [
+                                   0.0003,
+                                   0.0005
+                               ],
+                        "weight_decay":  [
+                                             0.0001,
+                                             0.0003
+                                         ],
+                        "dropout":  [
+                                        0.15,
+                                        0.2
+                                    ],
+                        "mlp_dropout":  [
+                                            0.15,
+                                            0.2
+                                        ]
+                    },
+    "fixed_config":  {
+                         "gnn_layers":  4,
+                         "hidden_dim":  64,
+                         "out_dim":  256,
+                         "mlp_hidden":  [
+                                            256,
+                                            128
+                                        ],
+                         "batch_size":  64,
+                         "epochs":  200,
+                         "grad_clip":  1,
+                         "threshold":  0.5,
+                         "pos_weight":  1,
+                         "early_stopping_monitor":  "val_pr_auc",
+                         "early_stopping_patience":  3,
+                         "early_stopping_min_delta":  0.001
+                     },
+    "protocol":  {
+                     "random_seed":  42,
+                     "test_size":  0.2,
+                     "n_splits":  5,
+                     "reuse_identical_split_membership":  true,
+                     "selection_metric":  "mean_validation_pr_auc",
+                     "selection_tie_breaker":  "mean_validation_roc_auc",
+                     "holdout_use":  "once_after_hyperparameter_selection",
+                     "optimizer":  "AdamW",
+                     "loss":  "BCEWithLogitsLoss"
+                 },
+    "models":  {
+                   "model5":  {
+                                  "heads":  4,
+                                  "film_scale":  0,
+                                  "global_mode":  "none",
+                                  "film_target":  "none"
+                              },
+                   "model6":  {
+                                  "heads":  4,
+                                  "film_scale":  0.2,
+                                  "global_mode":  "length",
+                                  "film_target":  "protein"
+                              },
+                   "model7":  {
+                                  "film_scale":  0,
+                                  "global_mode":  "none",
+                                  "film_target":  "none"
+                              },
+                   "model8":  {
+                                  "film_scale":  0.2,
+                                  "global_mode":  "length",
+                                  "film_target":  "protein"
+                              },
+                   "model9":  {
+                                  "film_scale":  0,
+                                  "global_mode":  "none",
+                                  "film_target":  "none"
+                              },
+                   "model10":  {
+                                   "film_scale":  0.2,
+                                   "global_mode":  "length",
+                                   "film_target":  "protein"
+                               }
+               }
+}
