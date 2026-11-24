@@ -32,10 +32,10 @@ Kode evaluasi berada di `2-machine_learning_analysis/` dengan penomoran model me
 
 | Model | Metode | Sumber |
 |---|---|---|
-| 1 | CAMP | [Lei dkk. (2021)](https://doi.org/10.1038/s41467-021-25772-4) · [Kode](https://github.com/twopin/CAMP) |
-| 2 | XGBoost | Pendekatan peptida–protein oleh [Kusuma dkk. (2023)](https://doi.org/10.1016/j.heliyon.2023.e21149) |
-| 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva dkk. (2026)](https://doi.org/10.1007/s10822-026-00801-w) · [Kode](https://github.com/TropBRC-BioinfoLab/ProVenTL) |
-| 4 | ESM2 + SAE-DNN | Konfigurasi eksploratif GraphVenom dengan embedding [ESM2, Lin dkk. (2023)](https://doi.org/10.1126/science.ade2574) · [Kode ESM](https://github.com/facebookresearch/esm) |
+| 1 | CAMP | [Lei dkk. (2021)](https://doi.org/10.1038/s41467-021-25772-4) |
+| 2 | XGBoost | [Kusuma dkk. (2023)](https://doi.org/10.1016/j.heliyon.2023.e21149) |
+| 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva dkk. (2026)](https://doi.org/10.1007/s10822-026-00801-w) |
+| 4 | ESM2 + SAE-DNN | Studi GraphVenom |
 | 5 | GAT berbasis sekuens | Studi GraphVenom |
 | 7 | GINE berbasis sekuens | Studi GraphVenom |
 | 9 | GCN berbasis sekuens | Studi GraphVenom |
