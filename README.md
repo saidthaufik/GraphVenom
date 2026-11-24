@@ -4,6 +4,10 @@ GraphVenom merupakan framework komputasional untuk memprediksi dan memprioritask
 
 Repositori ini memuat data, kode, model final, dan hasil yang mendukung penelitian GraphVenom.
 
+![Alur kerja GraphVenom dari Figure 1 pada paper](docs/figures/GraphVenom_workflow_final.png)
+
+*Gambar 1. Alur kerja GraphVenom, sebagaimana ditampilkan pada Figure 1 dalam paper.*
+
 ## Struktur direktori
 
 ```text
@@ -37,18 +41,13 @@ Kode evaluasi berada di `2-machine_learning_analysis/` dengan penomoran model me
 | 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva dkk. (2026)](https://doi.org/10.1007/s10822-026-00801-w) |
 | 4 | ESM2 + SAE-DNN | Studi GraphVenom |
 | 5 | GAT berbasis sekuens | Studi GraphVenom |
+| **6** | **GraphVenom-GAT** | Studi GraphVenom |
 | 7 | GINE berbasis sekuens | Studi GraphVenom |
+| **8** | **GraphVenom-GINE** | Studi GraphVenom |
 | 9 | GCN berbasis sekuens | Studi GraphVenom |
+| **10** | **GraphVenom-GCN** | Studi GraphVenom |
 
-## GraphVenom
-
-Model 6, 8, dan 10 menggunakan graf tingkat residu dengan pengayaan struktur protein AlphaFold dan pengondisian FiLM. Ketiganya dilatih sebagai model tersendiri dan menjadi komponen ensemble GraphVenom.
-
-| Model | Metode | Konfigurasi |
-|---|---|---|
-| 6 | GraphVenom-GAT | GAT + AlphaFold + FiLM |
-| 8 | GraphVenom-GINE | GINE + AlphaFold + FiLM |
-| 10 | GraphVenom-GCN | GCN + AlphaFold + FiLM |
+**Model 6, 8, dan 10 merupakan komponen ensemble GraphVenom.** Ketiganya menggunakan graf tingkat residu dengan pengayaan struktur protein AlphaFold dan pengondisian FiLM, serta dilatih sebagai model tersendiri.
 
 Keputusan positif ensemble memerlukan sedikitnya dua suara positif. Seleksi kandidat lanjutan menggunakan konsensus penuh dari ketiga model, kemudian pasangan diperingkat berdasarkan rata-rata probabilitas interaksi untuk memperoleh 100 kandidat teratas per spesies. Checkpoint tersedia di `2-machine_learning_analysis/checkpoints/` dan hasil evaluasi serta screening di `2-machine_learning_analysis/results/`.
 
