@@ -18,20 +18,13 @@ GraphVenom/
 
 ## Data
 
-Data mencakup pasangan interaksi untuk pengembangan model serta peptida bisa ular dan protein terkait kanker untuk screening. Jumlah berikut merupakan hasil kurasi yang digunakan dalam penelitian.
+Data awal untuk screening meliputi peptida bisa ular dan protein terkait kanker.
 
-| Data | Asal dan sumber | Jumlah | Berkas |
-|---|---|---|---|
-| Interaksi positif peptida–protein | Integrasi [RCSB PDB](https://www.rcsb.org/), [SIFTS](https://www.ebi.ac.uk/pdbe/docs/sifts/), [UniProt](https://www.uniprot.org/), dan [DrugBank](https://go.drugbank.com/), dengan penapisan kontak struktural menggunakan [PLIP](https://plip-tool.biotec.tu-dresden.de/) | 3.470 pasangan | [positive.csv](1-data/original/training/positive.csv) |
-| Kandidat negatif (*putative negatives*) | Seleksi komputasional berbasis GAN yang diadaptasi dari [Rizaldi dkk. (2026)](https://doi.org/10.53806/jmscowa.v7i1.1557) | 3.521 rekaman | [gan_decoy.csv](1-data/processed/training/gan_decoy.csv) |
-| Dataset pemodelan | Gabungan rekaman positif dan kandidat negatif | 6.991 rekaman | [data.csv](1-data/processed/training/data.csv) |
-| Peptida *Trimeresurus albolabris* | Proteomik LC-MS sampel bisa asal Kulon Progo dari Serpentarium Universitas Gadjah Mada | 182 peptida | [Data proteomik](1-data/original/screening/ab51_trimeresurus_albolabris.xlsx) |
-| Peptida *Naja sumatrana* | Proteomik LC-MS sampel bisa asal Jambi dari Serpentarium Universitas Gadjah Mada | 829 peptida | [Data proteomik](1-data/original/screening/ab66_naja_sumatrana.xlsx) |
-| Protein terkait kanker | Sekuens protein dari [UniProt](https://www.uniprot.org/) yang telah dikurasi | 895 protein | [cancer.xlsx](1-data/processed/screening/cancer/cancer.xlsx) |
-| Pasangan screening *T. albolabris* | Seluruh kombinasi 182 peptida dengan 895 protein target | 162.890 pasangan | [Peptida](1-data/processed/screening/snake/a51.csv) dan [protein target](1-data/processed/screening/cancer/cancer.xlsx) |
-| Pasangan screening *N. sumatrana* | Seluruh kombinasi 829 peptida dengan 895 protein target | 741.955 pasangan | [Peptida](1-data/processed/screening/snake/ab66.csv) dan [protein target](1-data/processed/screening/cancer/cancer.xlsx) |
-
-Jumlah interaksi positif merupakan hasil integrasi sumber, bukan jumlah terpisah dari setiap basis data. Kandidat negatif merupakan hasil seleksi komputasional dan belum dikonfirmasi sebagai noninteraksi secara eksperimental. Screening mencakup total 1.011 peptida dan 904.845 pasangan peptida–protein.
+| Data | Asal | Jumlah |
+|---|---|---|
+| Peptida *Trimeresurus albolabris* | Proteomik LC-MS sampel bisa asal Kulon Progo dari Serpentarium Universitas Gadjah Mada | 182 peptida |
+| Peptida *Naja sumatrana* | Proteomik LC-MS sampel bisa asal Jambi dari Serpentarium Universitas Gadjah Mada | 829 peptida |
+| Protein terkait kanker | [UniProt](https://www.uniprot.org/) | 895 protein |
 
 ## Model Evaluation
 
