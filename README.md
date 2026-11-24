@@ -55,19 +55,43 @@ Keputusan positif ensemble memerlukan sedikitnya dua suara positif. Seleksi kand
 
 Docking kandidat dan peptida kontrol pada protein target yang sama dilakukan menggunakan HADDOCK3 ([Giulini dkk., 2025](https://doi.org/10.1021/acs.jcim.5c00969)). Interaksi antarmuka, termasuk residu kontak, ikatan hidrogen, dan jembatan garam, divisualisasikan menggunakan [Maestro 14.9, Schrödinger](https://www.schrodinger.com/platform/products/maestro/).
 
-Data dan hasil docking tersedia di `3-docking_analysis/`, mencakup kode dan konfigurasi, skor di `results/scores/`, pose terbaik di `results/best_poses/`, serta perbandingan kandidat dengan kontrol di `results/controls/`. Manifest di `results/manifests/` menghubungkan hasil dengan berkas input menggunakan path dari direktori utama `GraphVenom/`.
+Lokasi data dalam `3-docking_analysis/`:
+
+| Data | Lokasi |
+|---|---|
+| Kode docking | `src/` |
+| Konfigurasi docking | `configs/` |
+| Skor docking | `results/scores/` |
+| Pose terbaik | `results/best_poses/` |
+| Perbandingan kandidat dengan kontrol | `results/controls/` |
+| Pemetaan hasil ke berkas input | `results/manifests/` |
+
+Path berkas input dalam manifest dihitung dari direktori utama `GraphVenom/`.
 
 ## Dinamika molekuler
 
 Simulasi dinamika molekuler selama 200 ns dilakukan menggunakan GROMACS 2021 ([Abraham dkk., 2015](https://doi.org/10.1016/j.softx.2015.06.001)) dengan medan gaya CHARMM36 ([Best dkk., 2012](https://doi.org/10.1021/ct300400x)). Energi pengikatan MM/PBSA dan MM/GBSA diestimasi menggunakan gmx_MMPBSA 1.6.5 ([Valdés-Tresanco dkk., 2021](https://doi.org/10.1021/acs.jctc.1c00645)).
 
-Hasil analisis tersedia di `4-dynamics_analysis/` untuk NOS2–VMEVLK, NOS2–LETHKLASLW (kontrol), PLCG1–KESEFR, dan PLCG1–QPPVPPQRPM (kontrol). Kurva dan ringkasan energi berada di `results/`, sedangkan gambar berada di `figures/`. Informasi sistem dan seri kurva tersedia dalam `results/systems.csv` dan `results/series_manifest.csv`.
+Hasil analisis mencakup NOS2–VMEVLK, NOS2–LETHKLASLW (kontrol), PLCG1–KESEFR, dan PLCG1–QPPVPPQRPM (kontrol). Lokasi data dalam `4-dynamics_analysis/`:
+
+| Data | Lokasi |
+|---|---|
+| Kurva hasil simulasi | `results/` |
+| Ringkasan energi pengikatan | `results/energy_summary.csv` |
+| Gambar hasil analisis | `figures/` |
+| Informasi sistem | `results/systems.csv` |
+| Pemetaan seri kurva | `results/series_manifest.csv` |
 
 ## Enrichment
 
 Pengayaan fungsional protein target dianalisis menggunakan Enrichr ([Evangelista dkk., 2023](https://doi.org/10.1093/nar/gkad393)), mencakup GO Biological Process, Cellular Component, Molecular Function, dan jalur KEGG. Jejaring hubungan protein target dengan istilah GO atau jalur KEGG divisualisasikan menggunakan Cytoscape 3.10.2 ([Shannon dkk., 2003](https://doi.org/10.1101/gr.1239303)).
 
-Hasil pengayaan tersedia di `5-enrichment_analysis/`, dipisahkan menurut spesies dalam folder `naja_sumatrana/` dan `trimeresurus_albolabris/`.
+Lokasi hasil pengayaan dalam `5-enrichment_analysis/`:
+
+| Data | Lokasi |
+|---|---|
+| Pengayaan *Naja sumatrana* | `naja_sumatrana/` |
+| Pengayaan *Trimeresurus albolabris* | `trimeresurus_albolabris/` |
 
 ## Atribusi
 
