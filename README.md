@@ -4,9 +4,9 @@ GraphVenom merupakan framework komputasional untuk memprediksi dan memprioritask
 
 Repositori ini memuat data, kode, model final, dan hasil yang mendukung penelitian GraphVenom.
 
-![Alur kerja GraphVenom dari Figure 1 pada paper](docs/figures/GraphVenom_workflow_final.png)
+![Alur kerja GraphVenom dari Figure 1 pada paper](docs/figures/GraphVenom_workflow_white.png)
 
-*Gambar 1. Alur kerja GraphVenom, sebagaimana ditampilkan pada Figure 1 dalam paper.*
+*Gambar 1. Alur kerja GraphVenom.*
 
 ## Struktur direktori
 
