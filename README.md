@@ -74,3 +74,9 @@ Hasil pengayaan tersedia di `5-enrichment_analysis/`, dipisahkan menurut spesies
 Penelitian ini didanai oleh Lembaga Pengelola Dana Pendidikan (LPDP) atas nama Kementerian Pendidikan Tinggi, Sains, dan Teknologi Indonesia dan dikelola melalui Program EQUITY (Nomor Kontrak 4297/B3/DT.03.08/2025 dan 42011/IT3/HK.07.00-4/P/B/2025).
 
 **Penulis:** Said Thaufik Rizaldi, Gilland Fausta Putra Achyar, Jeni Adhiva, Toto Haryanto, Rudi Heryanto, Fajar Sofyantoro, Annisa Maghfira, Donan Satria Yudha, Slamet Raharjo, Yekti Asih Purwestri, Tri Rini Nuringtyas, Ibnu Agus Ariyanto, Melva Louisa, Tamimah Shafwatul Ishlah, dan Wisnu Ananta Kusuma.
+
+## Contact:
+
+Prof. Dr.Eng. Wisnu Ananta Kusuma, S.T., M.T.
+
+[ananta@apps.ipb.ac.id](mailto:ananta@apps.ipb.ac.id)
