@@ -24,7 +24,7 @@ Data awal untuk screening meliputi peptida bisa ular dan protein terkait kanker.
 |---|---|---|
 | Peptida *Trimeresurus albolabris* | Proteomik LC-MS sampel bisa asal Kulon Progo dari Serpentarium Universitas Gadjah Mada | 182 peptida |
 | Peptida *Naja sumatrana* | Proteomik LC-MS sampel bisa asal Jambi dari Serpentarium Universitas Gadjah Mada | 829 peptida |
-| Protein terkait kanker | [UniProt](https://www.uniprot.org/) | 895 protein |
+| Protein terkait kanker | Kurasi terintegrasi dari [RCSB PDB](https://www.rcsb.org/), [SIFTS](https://www.ebi.ac.uk/pdbe/docs/sifts/), [UniProt](https://www.uniprot.org/), dan [DrugBank](https://go.drugbank.com/) | 895 protein |
 
 ## Model Evaluation
 
