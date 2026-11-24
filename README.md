@@ -1,107 +1,107 @@
 # GraphVenom: a FiLM-conditioned GNN ensemble framework for predicting cancer protein interactions with snake venom-derived peptides
 
-GraphVenom merupakan framework komputasional untuk memprediksi dan memprioritaskan interaksi antara peptida turunan bisa ular dan protein terkait kanker. Graf tingkat residu diproses oleh GAT, GINE, dan GCN dengan pengayaan struktur protein dari AlphaFold serta pengondisian Feature-wise Linear Modulation (FiLM). Prediksi ketiga model digabungkan sebagai ensemble untuk memilih kandidat yang dikarakterisasi melalui docking, dinamika molekuler, dan pengayaan fungsional.
+GraphVenom is a computational framework for predicting and prioritizing interactions between snake venom-derived peptides and cancer-associated proteins. Residue-level graphs are processed by GAT, GINE, and GCN models with AlphaFold-derived protein structural features and Feature-wise Linear Modulation (FiLM). Predictions from the three models are combined into an ensemble to select candidates for characterization through docking, molecular dynamics, and functional enrichment analysis.
 
-Repositori ini memuat data, kode, model final, dan hasil yang mendukung penelitian GraphVenom.
+This repository contains the data, code, final models, and results supporting the GraphVenom study.
 
-![Alur kerja GraphVenom dari Figure 1 pada paper](docs/figures/GraphVenom_workflow_white.png)
+![GraphVenom workflow](docs/figures/GraphVenom_workflow_white.png)
 
-*Gambar 1. Alur kerja GraphVenom.*
+*Figure 1. GraphVenom workflow.*
 
-## Struktur direktori
+## Directory Structure
 
 ```text
 GraphVenom/
 ├── README.md
-├── 1-data/                        # Data peptida–protein, fitur, split, dan struktur
-├── 2-machine_learning_analysis/   # Evaluasi model, GraphVenom, ablasi, dan prediksi
-├── 3-docking_analysis/            # Kode, konfigurasi, skor, dan pose docking
-├── 4-dynamics_analysis/           # Kurva, energi, dan gambar dinamika molekuler
-└── 5-enrichment_analysis/         # Hasil enrichment GO dan KEGG per spesies
+├── 1-data/                        # Peptide–protein data, features, splits, and structures
+├── 2-machine_learning_analysis/   # Model evaluation, GraphVenom, ablation, and prediction
+├── 3-docking_analysis/            # Docking code, configurations, scores, and poses
+├── 4-dynamics_analysis/           # Molecular dynamics curves, energies, and figures
+└── 5-enrichment_analysis/         # GO and KEGG enrichment results by species
 ```
 
 ## Data
 
-Data awal untuk screening meliputi peptida bisa ular dan protein terkait kanker.
+Input data for screening consist of snake venom-derived peptides and cancer-associated proteins.
 
-| Data | Asal | Jumlah |
+| Data | Source | Count |
 |---|---|---|
-| Peptida *Trimeresurus albolabris* | Proteomik LC-MS sampel bisa asal Kulon Progo dari Serpentarium Universitas Gadjah Mada | 182 peptida |
-| Peptida *Naja sumatrana* | Proteomik LC-MS sampel bisa asal Jambi dari Serpentarium Universitas Gadjah Mada | 829 peptida |
-| Protein terkait kanker | Kurasi terintegrasi dari [RCSB PDB](https://www.rcsb.org/), [SIFTS](https://www.ebi.ac.uk/pdbe/docs/sifts/), [UniProt](https://www.uniprot.org/), dan [DrugBank](https://go.drugbank.com/) | 895 protein |
+| *Trimeresurus albolabris* peptides | LC-MS proteomics of venom samples originating from Kulon Progo, obtained from the Universitas Gadjah Mada Serpentarium | 182 peptides |
+| *Naja sumatrana* peptides | LC-MS proteomics of venom samples originating from Jambi, obtained from the Universitas Gadjah Mada Serpentarium | 829 peptides |
+| Cancer-associated proteins | Integrated curation from [RCSB PDB](https://www.rcsb.org/), [SIFTS](https://www.ebi.ac.uk/pdbe/docs/sifts/), [UniProt](https://www.uniprot.org/), and [DrugBank](https://go.drugbank.com/) | 895 proteins |
 
 ## Model Evaluation
 
-Kode evaluasi berada di `2-machine_learning_analysis/` dengan penomoran model mengikuti artikel. Evaluasi mencakup validasi silang lima lipatan, studi ablasi, serta skenario unseen peptide, unseen protein, dan unseen both.
+Evaluation code is available in `2-machine_learning_analysis/`, with model numbering following the article. Evaluation includes five-fold cross-validation, ablation studies, and unseen peptide, unseen protein, and unseen both scenarios.
 
-| Model | Metode | Sumber |
+| Model | Method | Source |
 |---|---|---|
-| 1 | CAMP | [Lei dkk. (2021)](https://doi.org/10.1038/s41467-021-25772-4) |
-| 2 | XGBoost | [Kusuma dkk. (2023)](https://doi.org/10.1016/j.heliyon.2023.e21149) |
-| 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva dkk. (2026)](https://doi.org/10.1007/s10822-026-00801-w) |
-| 4 | ESM2 + SAE-DNN | Studi GraphVenom |
-| 5 | GAT berbasis sekuens | Studi GraphVenom |
-| **6** | **GraphVenom-GAT** | Studi GraphVenom |
-| 7 | GINE berbasis sekuens | Studi GraphVenom |
-| **8** | **GraphVenom-GINE** | Studi GraphVenom |
-| 9 | GCN berbasis sekuens | Studi GraphVenom |
-| **10** | **GraphVenom-GCN** | Studi GraphVenom |
+| 1 | CAMP | [Lei et al. (2021)](https://doi.org/10.1038/s41467-021-25772-4) |
+| 2 | XGBoost | [Kusuma et al. (2023)](https://doi.org/10.1016/j.heliyon.2023.e21149) |
+| 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva et al. (2026)](https://doi.org/10.1007/s10822-026-00801-w) |
+| 4 | ESM2 + SAE-DNN | This study |
+| 5 | Sequence-based GAT | This study |
+| **6** | **GraphVenom-GAT** | This study |
+| 7 | Sequence-based GINE | This study |
+| **8** | **GraphVenom-GINE** | This study |
+| 9 | Sequence-based GCN | This study |
+| **10** | **GraphVenom-GCN** | This study |
 
-**Model 6, 8, dan 10 merupakan komponen ensemble GraphVenom.** Ketiganya menggunakan graf tingkat residu dengan pengayaan struktur protein AlphaFold dan pengondisian FiLM, serta dilatih sebagai model tersendiri.
+**Models 6, 8, and 10 are the components of the GraphVenom ensemble.** Each uses residue-level graphs enriched with AlphaFold-derived protein structural features and FiLM conditioning, and is trained independently.
 
-Keputusan positif ensemble memerlukan sedikitnya dua suara positif. Seleksi kandidat lanjutan menggunakan konsensus penuh dari ketiga model, kemudian pasangan diperingkat berdasarkan rata-rata probabilitas interaksi untuk memperoleh 100 kandidat teratas per spesies. Checkpoint tersedia di `2-machine_learning_analysis/checkpoints/` dan hasil evaluasi serta screening di `2-machine_learning_analysis/results/`.
+A positive ensemble decision requires at least two positive votes. Subsequent candidate selection requires positive predictions from all three models. These pairs are ranked by mean interaction probability to obtain the top 100 candidates per species. Checkpoints are available in `2-machine_learning_analysis/checkpoints/`, and evaluation and screening results are in `2-machine_learning_analysis/results/`.
 
 ## Docking
 
-Docking kandidat dan peptida kontrol pada protein target yang sama dilakukan menggunakan HADDOCK3 ([Giulini dkk., 2025](https://doi.org/10.1021/acs.jcim.5c00969)). Interaksi antarmuka, termasuk residu kontak, ikatan hidrogen, dan jembatan garam, divisualisasikan menggunakan [Maestro 14.9, Schrödinger](https://www.schrodinger.com/platform/products/maestro/).
+Candidate and control peptides were docked against the same protein targets using HADDOCK3 ([Giulini et al., 2025](https://doi.org/10.1021/acs.jcim.5c00969)). Interface interactions, including contacting residues, hydrogen bonds, and salt bridges, were visualized using [Maestro 14.9, Schrödinger](https://www.schrodinger.com/platform/products/maestro/).
 
-Lokasi data dalam `3-docking_analysis/`:
+Data locations within `3-docking_analysis/`:
 
-| Data | Lokasi |
+| Data | Location |
 |---|---|
-| Kode docking | `src/` |
-| Konfigurasi docking | `configs/` |
-| Skor docking | `results/scores/` |
-| Pose terbaik | `results/best_poses/` |
-| Perbandingan kandidat dengan kontrol | `results/controls/` |
-| Pemetaan hasil ke berkas input | `results/manifests/` |
+| Docking code | `src/` |
+| Docking configurations | `configs/` |
+| Docking scores | `results/scores/` |
+| Best poses | `results/best_poses/` |
+| Candidate–control comparisons | `results/controls/` |
+| Mappings between results and input files | `results/manifests/` |
 
-Path berkas input dalam manifest dihitung dari direktori utama `GraphVenom/`.
+Input file paths in the manifests are relative to the `GraphVenom/` repository root.
 
-## Dinamika molekuler
+## Molecular Dynamics
 
-Simulasi dinamika molekuler selama 200 ns dilakukan menggunakan GROMACS 2021 ([Abraham dkk., 2015](https://doi.org/10.1016/j.softx.2015.06.001)) dengan medan gaya CHARMM36 ([Best dkk., 2012](https://doi.org/10.1021/ct300400x)). Energi pengikatan MM/PBSA dan MM/GBSA diestimasi menggunakan gmx_MMPBSA 1.6.5 ([Valdés-Tresanco dkk., 2021](https://doi.org/10.1021/acs.jctc.1c00645)).
+Molecular dynamics simulations were performed for 200 ns using GROMACS 2021 ([Abraham et al., 2015](https://doi.org/10.1016/j.softx.2015.06.001)) with the CHARMM36 force field ([Best et al., 2012](https://doi.org/10.1021/ct300400x)). MM/PBSA and MM/GBSA binding energies were estimated using gmx_MMPBSA 1.6.5 ([Valdés-Tresanco et al., 2021](https://doi.org/10.1021/acs.jctc.1c00645)).
 
-Hasil analisis mencakup NOS2–VMEVLK, NOS2–LETHKLASLW (kontrol), PLCG1–KESEFR, dan PLCG1–QPPVPPQRPM (kontrol). Lokasi data dalam `4-dynamics_analysis/`:
+The analysis covers NOS2–VMEVLK, NOS2–LETHKLASLW (control), PLCG1–KESEFR, and PLCG1–QPPVPPQRPM (control). Data locations within `4-dynamics_analysis/`:
 
-| Data | Lokasi |
+| Data | Location |
 |---|---|
-| Kurva hasil simulasi | `results/` |
-| Ringkasan energi pengikatan | `results/energy_summary.csv` |
-| Gambar hasil analisis | `figures/` |
-| Informasi sistem | `results/systems.csv` |
-| Pemetaan seri kurva | `results/series_manifest.csv` |
+| Simulation curves | `results/` |
+| Binding energy summary | `results/energy_summary.csv` |
+| Analysis figures | `figures/` |
+| System information | `results/systems.csv` |
+| Curve series mappings | `results/series_manifest.csv` |
 
 ## Enrichment
 
-Pengayaan fungsional protein target dianalisis menggunakan Enrichr ([Evangelista dkk., 2023](https://doi.org/10.1093/nar/gkad393)), mencakup GO Biological Process, Cellular Component, Molecular Function, dan jalur KEGG. Jejaring hubungan protein target dengan istilah GO atau jalur KEGG divisualisasikan menggunakan Cytoscape 3.10.2 ([Shannon dkk., 2003](https://doi.org/10.1101/gr.1239303)).
+Functional enrichment of target proteins was analyzed using Enrichr ([Evangelista et al., 2023](https://doi.org/10.1093/nar/gkad393)), covering GO Biological Process, Cellular Component, Molecular Function, and KEGG pathways. Networks connecting target proteins to GO terms or KEGG pathways were visualized using Cytoscape 3.10.2 ([Shannon et al., 2003](https://doi.org/10.1101/gr.1239303)).
 
-Lokasi hasil pengayaan dalam `5-enrichment_analysis/`:
+Enrichment result locations within `5-enrichment_analysis/`:
 
-| Data | Lokasi |
+| Data | Location |
 |---|---|
-| Pengayaan *Naja sumatrana* | `naja_sumatrana/` |
-| Pengayaan *Trimeresurus albolabris* | `trimeresurus_albolabris/` |
+| *Naja sumatrana* enrichment | `naja_sumatrana/` |
+| *Trimeresurus albolabris* enrichment | `trimeresurus_albolabris/` |
 
-## Atribusi
+## Attribution
 
-Penelitian ini didanai oleh Lembaga Pengelola Dana Pendidikan (LPDP) atas nama Kementerian Pendidikan Tinggi, Sains, dan Teknologi Indonesia dan dikelola melalui Program EQUITY (Nomor Kontrak 4297/B3/DT.03.08/2025 dan 42011/IT3/HK.07.00-4/P/B/2025).
+This research was funded by the Indonesia Endowment Fund for Education (LPDP) on behalf of the Ministry of Higher Education, Science, and Technology of Indonesia and administered through the EQUITY Program (Contract Numbers 4297/B3/DT.03.08/2025 and 42011/IT3/HK.07.00-4/P/B/2025).
 
-**Penulis:** Said Thaufik Rizaldi, Gilland Fausta Putra Achyar, Jeni Adhiva, Toto Haryanto, Rudi Heryanto, Fajar Sofyantoro, Annisa Maghfira, Donan Satria Yudha, Slamet Raharjo, Yekti Asih Purwestri, Tri Rini Nuringtyas, Ibnu Agus Ariyanto, Melva Louisa, Tamimah Shafwatul Ishlah, dan Wisnu Ananta Kusuma.
+**Authors:** Said Thaufik Rizaldi, Gilland Fausta Putra Achyar, Jeni Adhiva, Toto Haryanto, Rudi Heryanto, Fajar Sofyantoro, Annisa Maghfira, Donan Satria Yudha, Slamet Raharjo, Yekti Asih Purwestri, Tri Rini Nuringtyas, Ibnu Agus Ariyanto, Melva Louisa, Tamimah Shafwatul Ishlah, and Wisnu Ananta Kusuma.
 
 ## Contact
 
-Untuk pertanyaan, diskusi, atau informasi lebih lanjut mengenai penelitian dan penggunaan GraphVenom, silakan menghubungi:
+For questions, discussion, or further information about the research and use of GraphVenom, please contact:
 
 Prof. Dr.Eng. Wisnu Ananta Kusuma, S.T., M.T.
 
