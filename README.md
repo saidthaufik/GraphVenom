@@ -1,8 +1,8 @@
 # GraphVenom: a FiLM-conditioned GNN ensemble framework for predicting cancer protein interactions with snake venom-derived peptides
 
-GraphVenom merupakan framework komputasional untuk memprediksi dan memprioritaskan interaksi antara peptida turunan bisa ular dan protein terkait kanker. Representasi graf diproses oleh GAT, GINE, dan GCN dengan pengayaan struktur AlphaFold serta pengondisian FiLM. Prediksi ketiga model digabungkan sebagai ensemble untuk memilih kandidat yang dianalisis lebih lanjut melalui docking dan dinamika molekuler.
+GraphVenom merupakan framework komputasional untuk memprediksi dan memprioritaskan interaksi antara peptida turunan bisa ular dan protein terkait kanker. Graf tingkat residu diproses oleh GAT, GINE, dan GCN dengan pengayaan struktur protein dari AlphaFold serta pengondisian Feature-wise Linear Modulation (FiLM). Prediksi ketiga model digabungkan sebagai ensemble untuk memilih kandidat yang dikarakterisasi melalui docking, dinamika molekuler, dan pengayaan fungsional.
 
-Paket ini memuat data, kode, model final, dan hasil yang mendukung artikel. Seluruh dokumentasi penggunaan disatukan dalam README ini.
+Repositori ini memuat data, kode, model final, dan hasil yang mendukung penelitian GraphVenom.
 
 ## Struktur direktori
 
@@ -10,7 +10,7 @@ Paket ini memuat data, kode, model final, dan hasil yang mendukung artikel. Selu
 GraphVenom/
 ├── README.md
 ├── 1-data/                        # Data peptida–protein, fitur, split, dan struktur
-├── 2-machine_learning_analysis/   # Model benchmark, GraphVenom, ablasi, dan prediksi
+├── 2-machine_learning_analysis/   # Evaluasi model, GraphVenom, ablasi, dan prediksi
 ├── 3-docking_analysis/            # Kode, konfigurasi, skor, dan pose docking
 ├── 4-dynamics_analysis/           # Kurva, energi, dan gambar dinamika molekuler
 └── 5-enrichment_analysis/         # Hasil enrichment GO dan KEGG per spesies
@@ -18,96 +18,61 @@ GraphVenom/
 
 ## Data
 
-Folder `1-data/` berisi data pelatihan dan screening peptida–protein. Data masukan berada di `original/`, hasil pengolahan di `processed/`, fitur model di `features/`, pembagian evaluasi di `splits/`, serta struktur protein dan peptida di `structures/`.
+Data mencakup pasangan interaksi untuk pengembangan model serta peptida bisa ular dan protein terkait kanker untuk screening. Jumlah berikut merupakan hasil kurasi yang digunakan dalam penelitian.
 
-Data peptida screening mencakup *Naja sumatrana* dan *Trimeresurus albolabris*. Dataset model graf terdiri atas 6.991 pasangan: 3.470 positif dan 3.521 kandidat negatif hasil seleksi komputasional.
+| Data | Asal dan sumber | Jumlah | Berkas |
+|---|---|---|---|
+| Interaksi positif peptida–protein | Integrasi [RCSB PDB](https://www.rcsb.org/), [SIFTS](https://www.ebi.ac.uk/pdbe/docs/sifts/), [UniProt](https://www.uniprot.org/), dan [DrugBank](https://go.drugbank.com/), dengan penapisan kontak struktural menggunakan [PLIP](https://plip-tool.biotec.tu-dresden.de/) | 3.470 pasangan | [positive.csv](1-data/original/training/positive.csv) |
+| Kandidat negatif (*putative negatives*) | Seleksi komputasional berbasis GAN yang diadaptasi dari [Rizaldi dkk. (2026)](https://doi.org/10.53806/jmscowa.v7i1.1557) | 3.521 rekaman | [gan_decoy.csv](1-data/processed/training/gan_decoy.csv) |
+| Dataset pemodelan | Gabungan rekaman positif dan kandidat negatif | 6.991 rekaman | [data.csv](1-data/processed/training/data.csv) |
+| Peptida *Trimeresurus albolabris* | Proteomik LC-MS sampel bisa asal Kulon Progo dari Serpentarium Universitas Gadjah Mada | 182 peptida | [Data proteomik](1-data/original/screening/ab51_trimeresurus_albolabris.xlsx) |
+| Peptida *Naja sumatrana* | Proteomik LC-MS sampel bisa asal Jambi dari Serpentarium Universitas Gadjah Mada | 829 peptida | [Data proteomik](1-data/original/screening/ab66_naja_sumatrana.xlsx) |
+| Protein terkait kanker | Sekuens protein dari [UniProt](https://www.uniprot.org/) yang telah dikurasi | 895 protein | [cancer.xlsx](1-data/processed/screening/cancer/cancer.xlsx) |
+| Pasangan screening *T. albolabris* | Seluruh kombinasi 182 peptida dengan 895 protein target | 162.890 pasangan | [Peptida](1-data/processed/screening/snake/a51.csv) dan [protein target](1-data/processed/screening/cancer/cancer.xlsx) |
+| Pasangan screening *N. sumatrana* | Seluruh kombinasi 829 peptida dengan 895 protein target | 741.955 pasangan | [Peptida](1-data/processed/screening/snake/ab66.csv) dan [protein target](1-data/processed/screening/cancer/cancer.xlsx) |
 
-## Machine learning
+Jumlah interaksi positif merupakan hasil integrasi sumber, bukan jumlah terpisah dari setiap basis data. Kandidat negatif merupakan hasil seleksi komputasional dan belum dikonfirmasi sebagai noninteraksi secara eksperimental. Screening mencakup total 1.011 peptida dan 904.845 pasangan peptida–protein.
 
-Kode berada di `2-machine_learning_analysis/`. Folder `model1/` hingga `model10/` mengikuti penomoran model pada artikel; analisis ablasi berada di `ablation/`.
+## Model Evaluation
+
+Kode evaluasi berada di `2-machine_learning_analysis/` dengan penomoran model mengikuti artikel. Evaluasi mencakup validasi silang lima lipatan, studi ablasi, serta skenario unseen peptide, unseen protein, dan unseen both.
 
 | Model | Metode | Sumber |
 |---|---|---|
-| 1 | CAMP | [Lei dkk., 2021](https://doi.org/10.1038/s41467-021-25772-4) · [Kode](https://github.com/twopin/CAMP) |
-| 2 | XGBoost | Pendekatan peptida–protein: [Kusuma dkk., 2023](https://doi.org/10.1016/j.heliyon.2023.e21149) |
-| 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva dkk., 2026](https://doi.org/10.1007/s10822-026-00801-w) · [Kode](https://github.com/TropBRC-BioinfoLab/ProVenTL) |
-| 4 | ESM2 + SAE-DNN | Konfigurasi eksploratif GraphVenom; embedding ESM2: [Lin dkk., 2023](https://doi.org/10.1126/science.ade2574) · [Kode ESM](https://github.com/facebookresearch/esm) |
-| 5 / 6 | GAT berbasis sekuens / GraphVenom-GAT | Studi GraphVenom |
-| 7 / 8 | GINE berbasis sekuens / GraphVenom-GINE | Studi GraphVenom |
-| 9 / 10 | GCN berbasis sekuens / GraphVenom-GCN | Studi GraphVenom |
+| 1 | CAMP | [Lei dkk. (2021)](https://doi.org/10.1038/s41467-021-25772-4) · [Kode](https://github.com/twopin/CAMP) |
+| 2 | XGBoost | Pendekatan peptida–protein oleh [Kusuma dkk. (2023)](https://doi.org/10.1016/j.heliyon.2023.e21149) |
+| 3 | ProVenTL (ProtT5 + SAE-DNN) | [Adhiva dkk. (2026)](https://doi.org/10.1007/s10822-026-00801-w) · [Kode](https://github.com/TropBRC-BioinfoLab/ProVenTL) |
+| 4 | ESM2 + SAE-DNN | Konfigurasi eksploratif GraphVenom dengan embedding [ESM2, Lin dkk. (2023)](https://doi.org/10.1126/science.ade2574) · [Kode ESM](https://github.com/facebookresearch/esm) |
+| 5 | GAT berbasis sekuens | Studi GraphVenom |
+| 7 | GINE berbasis sekuens | Studi GraphVenom |
+| 9 | GCN berbasis sekuens | Studi GraphVenom |
 
-Sumber komponen: XGBoost oleh [Chen dan Guestrin (2016)](https://arxiv.org/abs/1603.02754), serta ProtT5/ProtTrans oleh [Elnaggar dkk. (2022)](https://doi.org/10.1109/TPAMI.2021.3095381) ([kode ProtTrans](https://github.com/agemagician/ProtTrans)).
+## GraphVenom
 
-### Hyperparameter
+Model 6, 8, dan 10 menggunakan graf tingkat residu dengan pengayaan struktur protein AlphaFold dan pengondisian FiLM. Ketiganya dilatih sebagai model tersendiri dan menjadi komponen ensemble GraphVenom.
 
-Ruang pencarian bersama Model 5–10 ditetapkan dalam `configs/tuning/common_graph_grid.json`: masing-masing 16 kombinasi learning rate, weight decay, graph dropout, dan predictor dropout, dengan protokol evaluasi yang sama. Evaluasi ini belum dijalankan; berkas JSON merupakan spesifikasi dan belum dibaca otomatis oleh trainer. Tabel di bawah tetap mendokumentasikan hasil eksperimen terdahulu.
+| Model | Metode | Konfigurasi |
+|---|---|---|
+| 6 | GraphVenom-GAT | GAT + AlphaFold + FiLM |
+| 8 | GraphVenom-GINE | GINE + AlphaFold + FiLM |
+| 10 | GraphVenom-GCN | GCN + AlphaFold + FiLM |
 
-Konfigurasi final seluruh model tersedia di `configs/benchmark/`. Tabel berikut merangkum pencarian awal GraphVenom-GAT, GINE, dan GCN: masing-masing 6, 8, dan 8 kombinasi yang dievaluasi pada lima fold. Nilai terpilih juga digunakan pada benchmark final. **Tetap** berarti parameter memakai satu nilai sepanjang pencarian.
-
-| Model | Hyperparameter | Kandidat | Nilai terpilih |
-|---|---|---|---|
-| 6 — GAT | Learning rate | Tetap | 0,0005 |
-| | Graph dropout | 0,15; 0,20 | 0,15 |
-| | MLP dropout | Tetap | 0,15 |
-| | Weight decay | Tetap | 0,0001 |
-| | FiLM scale | 0,05; 0,10; 0,20 | 0,20 |
-| 8 — GINE | Learning rate | Tetap | 0,0005 |
-| | Graph dropout | 0,15; 0,20 | 0,15 |
-| | MLP dropout | 0,15; 0,20 | 0,20 |
-| | Weight decay | 0,0001; 0,0003 | 0,0003 |
-| | FiLM scale | Tetap | 0,20 |
-| 10 — GCN | Learning rate | 0,0003; 0,0005 | 0,0005 |
-| | Graph dropout | Tetap | 0,20 |
-| | MLP dropout | 0,15; 0,20 | 0,20 |
-| | Weight decay | Tetap | 0,0003 |
-| | FiLM scale | 0,10; 0,20 | 0,20 |
-
-Batch size 64, empat graph layer, hidden dimension 64, output dimension 256, serta MLP berukuran 256 dan 128 digunakan tetap. GAT memakai empat attention head. Pemilihan kandidat per fold menggunakan validation PR-AUC, dengan ROC-AUC sebagai pembanding saat PR-AUC sama; konfigurasi final mengikuti kandidat yang paling sering menang antar-fold.
-
-Daftar kandidat, hasil per fold, dan ringkasan pemilihan tersedia di `results/tuning/`. Konfigurasi benchmark model lainnya dapat dilihat pada `configs/benchmark/`.
-Riwayat eksperimen awal Model 5, 7, dan 9 berada di `results/tuning/early_2026-05-13/`. Masing-masing mengevaluasi empat kombinasi pada lima fold:
-
-| Model (eksperimen awal) | Hyperparameter | Kandidat | Nilai terpilih pada eksperimen awal |
-|---|---|---|---|
-| 5 | Learning rate | 0,0003; 0,0005 | 0,0003 |
-| 5 | Weight decay | 0,001; 0,01 | 0,001 |
-| 7 | Learning rate | 0,0003; 0,0005 | 0,0005 |
-| 7 | Weight decay | 0,0001; 0,001 | 0,001 |
-| 9 | Learning rate | 0,0003; 0,0005 | 0,0003 |
-| 9 | Weight decay | 0,001; 0,01 | 0,001 |
-
-Eksperimen awal menggunakan prediktor MLP berukuran 512–256–128. Benchmark final menggunakan 256–128 dan konfigurasi GNN yang telah diperbarui; nilai finalnya tercantum di `configs/benchmark/`.
-
-### Penggunaan
-
-Siapkan dependensi dari `environments/`. Untuk baseline, ekstrak fitur `.csv.gz` menjadi `.csv` pada folder yang sama. Checkpoint ensemble Model 6, 8, dan 10 tersedia di `checkpoints/`, sedangkan hasil evaluasi dan screening berada di `results/`.
-
-Jalankan screening dari direktori `2-machine_learning_analysis/`:
-
-```bash
-python 2-predict/dotproduct.py
-python 2-predict/predict.py --device cuda
-python 2-predict/voting.py
-```
-
-Seleksi kandidat dilanjutkan melalui `2-predict/ensemble_filtering.ipynb`. Untuk pelatihan, gunakan skrip praproses dan trainer di folder model terkait, misalnya `model6/0-feat/pre.py` dan `model6/1-model/train_sing_es.py`.
+Keputusan positif ensemble memerlukan sedikitnya dua suara positif. Seleksi kandidat lanjutan menggunakan konsensus penuh dari ketiga model, kemudian pasangan diperingkat berdasarkan rata-rata probabilitas interaksi untuk memperoleh 100 kandidat teratas per spesies. Checkpoint tersedia di `2-machine_learning_analysis/checkpoints/` dan hasil evaluasi serta screening di `2-machine_learning_analysis/results/`.
 
 ## Docking
 
-Folder `3-docking_analysis/` berisi kode dan konfigurasi docking, ringkasan skor di `results/scores/`, pose terbaik di `results/best_poses/`, serta perbandingan kandidat–kontrol di `results/controls/`. Manifest di `results/manifests/` menghubungkan hasil dengan berkas input. Path dalam manifest dihitung dari direktori utama `GraphVenom/`.
+Folder `3-docking_analysis/` memuat kode dan konfigurasi docking, skor di `results/scores/`, pose terbaik di `results/best_poses/`, serta perbandingan kandidat dengan kontrol di `results/controls/`. Manifest di `results/manifests/` menghubungkan hasil dengan berkas input menggunakan path dari direktori utama `GraphVenom/`.
 
 ## Dinamika molekuler
 
-Folder `4-dynamics_analysis/` memuat hasil analisis sistem NOS2–VMEVLK, NOS2–LETHKLASLW (kontrol), PLCG1–KESEFR, dan PLCG1–QPPVPPQRPM (kontrol). Kurva dan ringkasan energi berada di `results/`, sedangkan gambar berada di `figures/`. Informasi sistem dan seri kurva tersedia dalam `systems.csv` dan `series_manifest.csv` di dalam `results/`.
+Folder `4-dynamics_analysis/` memuat hasil simulasi 200 ns untuk NOS2–VMEVLK, NOS2–LETHKLASLW (kontrol), PLCG1–KESEFR, dan PLCG1–QPPVPPQRPM (kontrol). Kurva dan estimasi energi MM/PBSA serta MM/GBSA berada di `results/`, sedangkan gambar berada di `figures/`. Informasi sistem dan seri kurva tersedia dalam `results/systems.csv` dan `results/series_manifest.csv`.
 
 ## Enrichment
 
-Folder `5-enrichment_analysis/` memuat gambar hasil GO Biological Process, Cellular Component, Molecular Function, dan jalur KEGG. Hasil dipisahkan ke dalam `naja_sumatrana/` dan `trimeresurus_albolabris/`.
+Folder `5-enrichment_analysis/` memuat hasil pengayaan GO Biological Process, Cellular Component, Molecular Function, dan jalur KEGG. Hasil dipisahkan ke dalam `naja_sumatrana/` dan `trimeresurus_albolabris/`.
 
-## Sitasi dan atribusi
+## Atribusi
 
-Gunakan judul artikel GraphVenom di atas untuk merujuk penelitian ini.
+Penelitian ini didanai oleh Lembaga Pengelola Dana Pendidikan (LPDP) atas nama Kementerian Pendidikan Tinggi, Sains, dan Teknologi Indonesia dan dikelola melalui Program EQUITY (Nomor Kontrak 4297/B3/DT.03.08/2025 dan 42011/IT3/HK.07.00-4/P/B/2025).
 
 **Penulis:** Said Thaufik Rizaldi, Gilland Fausta Putra Achyar, Jeni Adhiva, Toto Haryanto, Rudi Heryanto, Fajar Sofyantoro, Annisa Maghfira, Donan Satria Yudha, Slamet Raharjo, Yekti Asih Purwestri, Tri Rini Nuringtyas, Ibnu Agus Ariyanto, Melva Louisa, Tamimah Shafwatul Ishlah, dan Wisnu Ananta Kusuma.
-
-Docking menggunakan HADDOCK. Rujukan: [HADDOCK3, Bonvin's Lab (2022)](https://github.com/haddocking/haddock3) dan Dominguez, C., Boelens, R. & Bonvin, A. M. J. J. (2003), *HADDOCK: a protein-protein docking approach based on biochemical or biophysical information*, J Am Chem Soc 125, 1731–1737. Lisensi dan metadata HADDOCK tersedia di `3-docking_analysis/docs/third_party/haddock3/`. Pengembangan HADDOCK didukung Horizon 2020 [BioExcel CoE](https://www.bioexcel.eu), proyek [823830](https://cordis.europa.eu/project/id/823830).
