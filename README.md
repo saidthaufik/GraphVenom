@@ -99,7 +99,9 @@ Penelitian ini didanai oleh Lembaga Pengelola Dana Pendidikan (LPDP) atas nama K
 
 **Penulis:** Said Thaufik Rizaldi, Gilland Fausta Putra Achyar, Jeni Adhiva, Toto Haryanto, Rudi Heryanto, Fajar Sofyantoro, Annisa Maghfira, Donan Satria Yudha, Slamet Raharjo, Yekti Asih Purwestri, Tri Rini Nuringtyas, Ibnu Agus Ariyanto, Melva Louisa, Tamimah Shafwatul Ishlah, dan Wisnu Ananta Kusuma.
 
-## Contact:
+## Contact
+
+Untuk pertanyaan, diskusi, atau informasi lebih lanjut mengenai penelitian dan penggunaan GraphVenom, silakan menghubungi:
 
 Prof. Dr.Eng. Wisnu Ananta Kusuma, S.T., M.T.
 
